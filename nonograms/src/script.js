@@ -1,5 +1,5 @@
-import './modules/create_element';
-import './modules/generate_elements';
+import './components/createElement';
+
 import './sass/style.scss';
 
 
