@@ -9,7 +9,13 @@ module.exports = {
         filename: 'bundle.js',
         assetModuleFilename: 'assets/[name][ext]',
     },
-    plugins: [new MiniCssExtractPlugin()],
+    mode: 'development',
+    optimization: {
+        minimize: false
+    },
+    plugins: [new MiniCssExtractPlugin({
+        filename: '[name].css',
+    })],
     module: {
         rules: [
             {
@@ -18,7 +24,7 @@ module.exports = {
             },
             {
                 test: /\.(scss|css)$/,
-                use: [MiniCssExtractPlugin.loader, 'style-loader', 'css-loader', 'postcss-loader', 'sass-loader'],
+                use: [MiniCssExtractPlugin.loader, 'css-loader', 'postcss-loader', 'sass-loader'], //add first 'style-loader' to not separate css file after build
             }
         ],
     },
