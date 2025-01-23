@@ -18,20 +18,37 @@ export class GameField {
         this.field.appendChild(this.topClues);
         this.field.appendChild(this.cellsGrid);
 
+
         if (level === 'easy') {
             for (let i = 0; i < 5; i++) {
                 this.row = this.cellsGrid.appendChild(createElement({ tag: 'div', classes: ['row'] }));
                 for (let j = 0; j < 5; j++) {
-                    this.row.appendChild(createElement({ tag: 'div', classes: ['cell'] }));
+                    let cell = createElement({ tag: 'div', classes: ['cell'] });
+                    this.row.appendChild(cell);
+
+                    cell.addEventListener(('click'), (event) => {
+                        if (event.target === cell) {
+                            cell.classList.toggle('cell--clicked');
+                        }
+                    });
+
+                    cell.addEventListener(('contextmenu'), (event) => {
+                        if (event.target === cell) {
+                            event.preventDefault();
+                            cell.classList.toggle('cell--crossed');
+                        }
+                    })
                 }
                 this.leftClues.appendChild(createElement({ tag: 'div', classes: ['clue'] }));
                 this.topClues.appendChild(createElement({ tag: 'div', classes: ['clue'] }));
             }
-
         }
+        // cell.addEventListener()
+
 
     }
-    createGameField(width, height) {
+    fillClues() {
+
     }
 
 }

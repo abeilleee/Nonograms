@@ -39,28 +39,39 @@
     grid-template-columns: repeat(5, 1fr);
     // border: 1px solid black;
     // border-collapse: collapse;
-    grid-gap:1px;
+    grid-gap: 1px;
 
     &:not(:first-child) {
         border-top: 1px solid black;
     }
 
-   
+
 }
 
 .cell {
     width: 40px;
     height: 40px;
 
-  &:not(:last-child) {
-    border-right: 1px solid black;
-  }
+    &--clicked {
+        background-color: black;
+    }
 
-  
-    
+    &--crossed {
+        background-image: url('../assets/images/cross.svg');
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: contain;        
+    }
+
+    &:not(:last-child) {
+        border-right: 1px solid black;
+    }
+
+
+
 }
 
-.clue{
+.clue {
     width: 40px;
     height: 40px;
     border: 1px solid rgb(9, 66, 238);
