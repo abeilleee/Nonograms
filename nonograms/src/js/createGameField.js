@@ -2,7 +2,7 @@ import { createElement } from "./createElementFunction";
 import { wrapper } from "./createElements";
 
 export class GameField {
-    constructor(field) {
+    constructor() {
         this.field = createElement({ tag: 'div', parent: wrapper, classes: ['field'] });
         this.leftClues = createElement({ tag: 'div', classes: ['field__clues', 'field__clues--left'] });
         this.topClues = createElement({ tag: 'div', classes: ['field__clues', 'field__clues--top'] });
@@ -13,9 +13,8 @@ export class GameField {
         while (this.field.firstChild) {
             this.field.removeChild(parent.firstChild)
         }
-
-        this.field.appendChild(this.leftClues);
         this.field.appendChild(this.topClues);
+        this.field.appendChild(this.leftClues);        
         this.field.appendChild(this.cellsGrid);
 
 
@@ -29,6 +28,7 @@ export class GameField {
                     cell.addEventListener(('click'), (event) => {
                         if (event.target === cell) {
                             cell.classList.toggle('cell--clicked');
+                            cell.classList.remove('cell--crossed');
                         }
                     });
 
@@ -36,15 +36,14 @@ export class GameField {
                         if (event.target === cell) {
                             event.preventDefault();
                             cell.classList.toggle('cell--crossed');
+                            cell.classList.remove('cell--clicked');
                         }
                     })
                 }
-                this.leftClues.appendChild(createElement({ tag: 'div', classes: ['clue'] }));
-                this.topClues.appendChild(createElement({ tag: 'div', classes: ['clue'] }));
+                this.leftClues.appendChild(createElement({ tag: 'div', classes: ['clue', 'clue-left'] }));
+                this.topClues.appendChild(createElement({ tag: 'div', classes: ['clue', 'clue-top'] }));
             }
         }
-        // cell.addEventListener()
-
 
     }
     fillClues() {

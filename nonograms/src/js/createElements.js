@@ -3,13 +3,14 @@ import { createElement } from "./createElementFunction";
 //header
 const header = createElement({ tag: 'header', parent: document.body, classes: ['header'] });
 const container = createElement({ tag: 'div', parent: header, classes: ['container'] });
-const title = createElement({ tag: 'h1', text: 'Nonograms', parent: header, classes: ['header__title'] });
+const title = createElement({ tag: 'h1', text: 'Nonograms', parent: container, classes: ['header__title'] });
 //main
 const main = createElement({ tag: 'main', parent: document.body, classes: ['main'] });
 const containerMain = createElement({ tag: 'div', parent: main, classes: ['container'] });
 export const wrapper = createElement({ tag: 'div', parent: containerMain, classes: ['wrapper'] });
 //levels box
 const levelsWrapper = createElement({ tag: 'div', parent: wrapper, classes: ['levels__wrapper'] });
+const levelsTitle = createElement({ tag: 'div', text: 'Choose level', parent: levelsWrapper, classes: ['title'] });
 const levelsBox = createElement({ tag: 'div', parent: levelsWrapper, classes: ['levels__box'] });
 const levelEasy = createElement({
     tag: 'input',
