@@ -1,43 +1,13 @@
-export let createElement = (options) => {
-    const { tag = '', text = '', parent, classes = [], id, removeChildren, attributes = {} } = options;
-
-    let element = document.createElement(tag);
-    element.textContent = text;
-
-    if (parent != null) {
-        if (removeChildren != null) {
-            while (parent.firstChild) {
-                parent.removeChild(parent.firstChild)
-            }
-        }
-        parent.append(element);
-    }
-
-    if (id === 'true') {
-        element.setAttribute('id', `${text}`);
-    }
-
-    if (classes.length > 0) {
-        element.classList.add(...classes);
-    }
-
-    for (let attr in attributes) {
-        if (attributes.hasOwnProperty(attr)) {
-            element.setAttribute(attr, attributes[attr]);
-        }
-    }
-    return element;
-}
+import { createElement } from "./createElementFunction";
 
 //header
 const header = createElement({ tag: 'header', parent: document.body, classes: ['header'] });
 const container = createElement({ tag: 'div', parent: header, classes: ['container'] });
 const title = createElement({ tag: 'h1', text: 'Nonograms', parent: header, classes: ['header__title'] });
-
 //main
 const main = createElement({ tag: 'main', parent: document.body, classes: ['main'] });
 const containerMain = createElement({ tag: 'div', parent: main, classes: ['container'] });
-const wrapper = createElement({ tag: 'div', parent: containerMain, classes: ['wrapper'] });
+export const wrapper = createElement({ tag: 'div', parent: containerMain, classes: ['wrapper'] });
 //levels box
 const levelsWrapper = createElement({ tag: 'div', parent: wrapper, classes: ['levels__wrapper'] });
 const levelsBox = createElement({ tag: 'div', parent: levelsWrapper, classes: ['levels__box'] });
@@ -71,6 +41,7 @@ const levelHard = createElement({
 const labelHard = createElement({
     tag: 'label', text: 'hard', parent: levelsBox, classes: ['label'], attributes: { for: 'hard' }
 });
+
 //choose templates
 const templateWrapper = createElement({ tag: 'div', parent: wrapper, classes: ['template__wrapper'] });
 const templateLabel = createElement({
@@ -90,11 +61,10 @@ const saveGameBtn = createElement({ tag: 'button', text: 'Save game', parent: bu
 const continueBtn = createElement({ tag: 'button', text: 'Continue last game', parent: buttonsBox, classes: ['btn'] });
 const randomGameBtn = createElement({ tag: 'button', text: 'Random game', parent: buttonsBox, classes: ['btn'] });
 
-//nonograms
-const nonogramsField = createElement({ tag: 'div', parent: wrapper, classes: ['nonograms__field'] });
+//field
+
+
 
 
 //timer
 const timer = createElement({ tag: 'div',text: 'XX:XX', parent: wrapper, classes: ['timer'] });
-
-

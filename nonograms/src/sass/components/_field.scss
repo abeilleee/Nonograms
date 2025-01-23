@@ -1,0 +1,67 @@
+.field {
+    display: grid;
+    grid-template-columns: 1fr 5fr;
+    width: 300px;
+
+    &__clues {
+        display: grid;
+        grid-column: 1;
+        grid-row-start: 2;
+
+        &--left {
+            display: grid;
+            grid-column: 1;
+            grid-row-start: 2;
+        }
+
+        &--left {
+            display: grid;
+            grid-column-start: 2;
+            grid-row: 1;
+        }
+
+    }
+
+
+
+    &__cells {
+        display: grid;
+        grid-column-start: 2;
+        grid-row-start: 2;
+        border: 1px solid black;
+        border-collapse: collapse;
+        width: 206px;
+    }
+}
+
+.row {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    // border: 1px solid black;
+    // border-collapse: collapse;
+    grid-gap:1px;
+
+    &:not(:first-child) {
+        border-top: 1px solid black;
+    }
+
+   
+}
+
+.cell {
+    width: 40px;
+    height: 40px;
+
+  &:not(:last-child) {
+    border-right: 1px solid black;
+  }
+
+  
+    
+}
+
+.clue{
+    width: 40px;
+    height: 40px;
+    border: 1px solid rgb(9, 66, 238);
+}
