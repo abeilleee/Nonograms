@@ -69,4 +69,7 @@ const randomGameBtn = createElement({ tag: 'button', text: 'Random game', parent
 
 
 //timer
-const timer = createElement({ tag: 'div',text: 'XX:XX', parent: wrapper, classes: ['timer'] });
+export const timerBox = createElement({ tag: 'div', parent: wrapper, classes: ['timerBox'] });
+// const minutes = createElement({ tag: 'div',text: '00', parent: timer, classes: ['minutes'] });
+// const separator = createElement({ tag: 'div',text: ':', parent: timer, classes: ['timer__separator'] });
+// const seconds = createElement({ tag: 'div',text: '00', parent: timer, classes: ['seconds'] });
