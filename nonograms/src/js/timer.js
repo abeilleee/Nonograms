@@ -1,4 +1,3 @@
-import { wrapper } from "./createElements";
 import { createElement } from "./createElementFunction";
 import { timerBox } from "./createElements";
 
@@ -35,8 +34,6 @@ class Timer {
     getCurrentTime() {
         return this.currentTime;
     }
-
-    getTime
 }
 
 let timer = new Timer();
