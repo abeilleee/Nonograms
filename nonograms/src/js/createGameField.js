@@ -12,7 +12,9 @@ export class GameField {
         this.cellsGrid = createElement({ tag: 'div', classes: ['field__cells'] });
     }
 
-    createTopClues(width, height) {
+    createTopClues(puzzle) {
+        let width = puzzle.cluesTop.length;
+        let height = puzzle.cluesTop[0].length;
         let clueRowId = 0;
         let clueId = 0;
         for (let i = 0; i < width; i++) {
@@ -34,7 +36,9 @@ export class GameField {
         }
     }
 
-    createLeftClues(width, height) {
+    createLeftClues(puzzle) {
+        let width = puzzle.cluesLeft.length; 
+        let height = puzzle.cluesLeft[0].length; 
         let clueRowId = 0;
         let clueId = 0;
         for (let i = 0; i < width; i++) {
@@ -52,7 +56,6 @@ export class GameField {
             }
             clueRowId++;
             clueId = 0;
-
         }
     }
 
@@ -102,8 +105,8 @@ export class GameField {
     }
 
     fillClues(puzzle) {
-        let arrayTop = nonograms[0].cluesTop;
-        let arrayLeft = nonograms[0].cluesLeft;
+        let arrayTop = puzzle.cluesTop;
+        let arrayLeft = puzzle.cluesLeft;
 
         for (let i = 0; i < arrayTop.length; i++) {
             for (let j = 0; j < arrayTop[0].length; j++) {
@@ -119,7 +122,6 @@ export class GameField {
                 }
             }
         }
-
     }
 }
 
