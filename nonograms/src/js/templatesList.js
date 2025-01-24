@@ -1,6 +1,8 @@
 import { createElement } from "./createElementFunction";
 import { selectTemplate } from "./createElements";
 import { nonograms } from "./nonograms";
+import { GameField } from "./createGameField";
+import { gameField } from "./app";
 
 export class TemplateList {
     constructor() {
@@ -17,7 +19,7 @@ export class TemplateList {
                 let templateName = nonograms[i].name;
                 let option = (createElement({
                     tag: 'option', text: `${templateName}`,
-                    parent: selectTemplate, classes: ['template'], attributes: { value: `${i + 1}` }
+                    parent: selectTemplate, classes: ['template'], attributes: { value: `${i}` }
                 }));
                 this.list.appendChild(option);
             }
@@ -26,7 +28,7 @@ export class TemplateList {
                 let templateName = nonograms[i].name;
                 let option = (createElement({
                     tag: 'option', text: `${templateName}`,
-                    parent: selectTemplate, classes: ['template'], attributes: { value: `${i + 1}` }
+                    parent: selectTemplate, classes: ['template'], attributes: { value: `${i}` }
                 }));
                 this.list.appendChild(option);
             }
@@ -35,10 +37,18 @@ export class TemplateList {
                 let templateName = nonograms[i].name;
                 let option = (createElement({
                     tag: 'option', text: `${templateName}`,
-                    parent: selectTemplate, classes: ['template'], attributes: { value: `${i + 1}` }
+                    parent: selectTemplate, classes: ['template'], attributes: { value: `${i}` }
                 }));
                 this.list.appendChild(option);
             }
         }
+        this.list.addEventListener('change', (event) => {
+            let puzzle = nonograms[event.target.value];
+            gameField.createTopClues(puzzle);
+            gameField.createLeftClues(puzzle);
+            gameField.createFieldGame(puzzle);
+            gameField.fillClues(puzzle);
+        });
     }
+
 }

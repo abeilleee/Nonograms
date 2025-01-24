@@ -3,6 +3,7 @@ import { wrapper } from "./createElements";
 import { timer } from "./app";
 import { nonograms } from "./nonograms";
 import { Buttons } from "./buttons";
+import { removeChildren } from "./removeChildrenFunction";
 
 export class GameField {
     constructor() {
@@ -17,6 +18,8 @@ export class GameField {
         let height = puzzle.cluesTop[0].length;
         let clueRowId = 0;
         let clueId = 0;
+        removeChildren(this.topClues);
+
         for (let i = 0; i < width; i++) {
             let clueRow = (createElement({ tag: 'div', classes: ['clue-row', 'clue-row-top'] }));
             clueRow.setAttribute('id', `clueTop${clueRowId}`)
@@ -41,6 +44,8 @@ export class GameField {
         let height = puzzle.cluesLeft[0].length; 
         let clueRowId = 0;
         let clueId = 0;
+        removeChildren(this.leftClues);
+
         for (let i = 0; i < width; i++) {
             let clueRow = (createElement({ tag: 'div', classes: ['clue-row', 'clue-row-left'] }));
             clueRow.setAttribute('id', `clueLeft${clueRowId}`)

@@ -5,6 +5,7 @@ import './js/createGameField';
 import './js/timer';
 import './js/nonograms';
 import './js/templatesList';
+import './js/removeChildrenFunction';
 import './sass/style.scss';
 
 
