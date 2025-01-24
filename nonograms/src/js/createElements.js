@@ -11,7 +11,7 @@ export const wrapper = createElement({ tag: 'div', parent: containerMain, classe
 //levels box
 const levelsWrapper = createElement({ tag: 'div', parent: wrapper, classes: ['levels__wrapper'] });
 const levels = createElement({ tag: 'div', parent: levelsWrapper, classes: ['levels'] });
-const levelsTitle = createElement({ tag: 'div', text: 'Choose level', parent: levels, classes: ['title'] });
+const levelsTitle = createElement({ tag: 'div', text: 'Level:', parent: levels, classes: ['title'] });
 const levelsBox = createElement({ tag: 'div', parent: levels, classes: ['levels__box'] });
 const levelEasy = createElement({
     tag: 'input',
@@ -47,7 +47,7 @@ const labelHard = createElement({
 //choose templates
 const templates = createElement({ tag: 'div', parent: levelsWrapper, classes: ['templates'] });
 const templateLabel = createElement({
-    tag: 'label', text: 'Choose template', parent: templates, classes: ['templates__label'], attributes: { for: 'templates' }
+    tag: 'label', text: 'Templates:', parent: templates, classes: ['templates__label'], attributes: { for: 'templates' }
 });
 const selectTemplate = createElement({ tag: 'select', parent: templates, classes: ['templates__select'], id: 'templates' });
 const option1 = createElement({ tag: 'option', text: '1', parent: selectTemplate, classes: ['template'], attributes: { value: '1' } });
