@@ -10,10 +10,10 @@ timer.initTimer();
 
 //choose template
 let template = new TemplateList();
-template.fillList('easy');
+template.fillList('medium');
 //field game
 export const gameField = new GameField();
-let puzzle = nonograms[0];
+let puzzle = nonograms[5];
 gameField.createTopClues(puzzle);
 gameField.createLeftClues(puzzle);
 gameField.createFieldGame(puzzle);

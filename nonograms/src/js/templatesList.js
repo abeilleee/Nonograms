@@ -24,16 +24,7 @@ export class TemplateList {
                 this.list.appendChild(option);
             }
         } else if (level === 'medium') {
-            for (let i = 5; i < 11; i++) {
-                let templateName = nonograms[i].name;
-                let option = (createElement({
-                    tag: 'option', text: `${templateName}`,
-                    parent: selectTemplate, classes: ['template'], attributes: { value: `${i}` }
-                }));
-                this.list.appendChild(option);
-            }
-        } else if (level === 'hard') {
-            for (let i = 5; i < 11; i++) {
+            for (let i = 5; i < 10; i++) {
                 let templateName = nonograms[i].name;
                 let option = (createElement({
                     tag: 'option', text: `${templateName}`,
@@ -42,6 +33,16 @@ export class TemplateList {
                 this.list.appendChild(option);
             }
         }
+        // } else if (level === 'hard') {
+        //     for (let i = 10; i < 19; i++) {
+        //         let templateName = nonograms[i].name;
+        //         let option = (createElement({
+        //             tag: 'option', text: `${templateName}`,
+        //             parent: selectTemplate, classes: ['template'], attributes: { value: `${i}` }
+        //         }));
+        //         this.list.appendChild(option);
+        //     }
+        
         this.list.addEventListener('change', (event) => {
             let puzzle = nonograms[event.target.value];
             gameField.createTopClues(puzzle);
@@ -50,5 +51,4 @@ export class TemplateList {
             gameField.fillClues(puzzle);
         });
     }
-
 }

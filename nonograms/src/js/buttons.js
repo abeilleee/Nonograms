@@ -15,6 +15,14 @@ export class Buttons {
     reset () {
         timer.stop();
         timer.initTimer();
+        let clickedCells = document.querySelectorAll('.cell--clicked');
+        let crossedCells = document.querySelectorAll('.cell--crossed');
+        clickedCells.forEach((cell) => {
+            cell.classList.remove('cell--clicked');
+        })
+        crossedCells.forEach((cell) => {
+            cell.classList.remove('cell--crossed');
+        })
     }
 
 
