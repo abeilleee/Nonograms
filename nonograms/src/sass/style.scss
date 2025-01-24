@@ -1,4 +1,6 @@
 @import './base/normalize',
+'./utils/mixins',
+'./utils/variables',
 './base/typography',
 './components/buttons',
 './components/levels',
@@ -7,6 +9,4 @@
 './layout/header',
 './layout/container',
 './layout/wrapper',
-'./pages/index',
-'./utils/mixins',
-'./utils/variables'
+'./pages/index'

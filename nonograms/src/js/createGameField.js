@@ -16,6 +16,9 @@ export class GameField {
             topClues.appendChild(clueRow);
             for (let j = 0; j < height; j++) {
                 let clue = createElement({ tag: 'div', classes: ['clue', 'clue-top'] });
+                if (height === 5) {
+                    clue.classList.add('clue--size60');
+                }
                 clueRow.appendChild(clue);
             }
 
@@ -29,6 +32,9 @@ export class GameField {
             leftClues.appendChild(clueRow);
             for (let j = 0; j < height; j++) {
                 let clue = createElement({ tag: 'div', classes: ['clue', 'clue-left'] });
+                if (width === 5) {
+                    clue.classList.add('clue--size60');
+                }
                 clueRow.appendChild(clue);
             }
 
@@ -42,6 +48,9 @@ export class GameField {
             fieldGame.appendChild(row);
             for (let j = 0; j < height; j++) {
                 let cell = createElement({ tag: 'div', classes: ['cell'] });
+                if (width === 5) {
+                    cell.classList.add('clue--size60');
+                }
                 row.appendChild(cell);
             }
 

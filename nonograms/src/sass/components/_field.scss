@@ -26,8 +26,13 @@
 }
 
 .cell {
-    width: 20px;
-    height: 20px;
+    width: 30px;
+    height: 30px;
+
+    &--size60 {
+        width:60px;
+        height:60px;
+    }
 
     &:not(:last-child) {
         border-right: 1px solid black;
@@ -72,8 +77,13 @@
 }
 
 .clue {
-    width: 20px;
-    height: 20px;
+    width: 30px;
+    height: 30px;
+
+    &--size60 {
+        width:60px;
+        height:60px;
+    }
 
     &-top:not(:last-child) {
         border-right: 1px solid black;
