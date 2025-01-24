@@ -49,12 +49,12 @@ const templates = createElement({ tag: 'div', parent: levelsWrapper, classes: ['
 const templateLabel = createElement({
     tag: 'label', text: 'Templates:', parent: templates, classes: ['templates__label'], attributes: { for: 'templates' }
 });
-const selectTemplate = createElement({ tag: 'select', parent: templates, classes: ['templates__select'], id: 'templates' });
-const option1 = createElement({ tag: 'option', text: '1', parent: selectTemplate, classes: ['template'], attributes: { value: '1' } });
-const option2 = createElement({ tag: 'option', text: '2', parent: selectTemplate, classes: ['template'], attributes: { value: '2' } });
-const option3 = createElement({ tag: 'option', text: '3', parent: selectTemplate, classes: ['template'], attributes: { value: '3' } });
-const option4 = createElement({ tag: 'option', text: '4', parent: selectTemplate, classes: ['template'], attributes: { value: '4' } });
-const option5 = createElement({ tag: 'option', text: '5', parent: selectTemplate, classes: ['template'], attributes: { value: '5' } });
+export const selectTemplate = createElement({ tag: 'select', parent: templates, classes: ['templates__select'], id: 'templates' });
+// const option1 = createElement({ tag: 'option', text: '1', parent: selectTemplate, classes: ['template'], attributes: { value: '1' } });
+// const option2 = createElement({ tag: 'option', text: '2', parent: selectTemplate, classes: ['template'], attributes: { value: '2' } });
+// const option3 = createElement({ tag: 'option', text: '3', parent: selectTemplate, classes: ['template'], attributes: { value: '3' } });
+// const option4 = createElement({ tag: 'option', text: '4', parent: selectTemplate, classes: ['template'], attributes: { value: '4' } });
+// const option5 = createElement({ tag: 'option', text: '5', parent: selectTemplate, classes: ['template'], attributes: { value: '5' } });
 
 //buttonsBox
 // const buttonsBox = createElement({ tag: 'div', parent: wrapper, classes: ['btn__box'] });

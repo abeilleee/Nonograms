@@ -1,7 +1,7 @@
 export const nonograms = [
     {
         id: 0,
-        name: 'candle',
+        name: 'Candle',
         width: 5,
         height: 5,
         cluesTop: [[0, 1, 0, 0, 0], [1, 3, 1, 2, 1]],
@@ -10,7 +10,7 @@ export const nonograms = [
     },
     {
         id: 1,
-        name: 'camel',
+        name: 'Camel',
         width: 5,
         height: 5,
         cluesTop: [[4, 3, 4, 1, 1]],
@@ -19,7 +19,7 @@ export const nonograms = [
     },
     {
         id: 2,
-        name: 'rabbit',
+        name: 'Rabbit',
         width: 5,
         height: 5,
         cluesTop: [[0, 1, 1, 0, 2], [1, 3, 3, 4, 1]],
@@ -28,7 +28,7 @@ export const nonograms = [
     },
     {
         id: 3,
-        name: 'clock',
+        name: 'Clock',
         width: 5,
         height: 5,
         cluesTop: [[0, 0, 0, 1, 0], [0, 1, 3, 1, 0], [3, 1, 1, 1, 3]],
@@ -37,7 +37,7 @@ export const nonograms = [
     },
     {
         id: 4,
-        name: 'cat',
+        name: 'Cat',
         width: 5,
         height: 5,
         cluesTop: [[0, 0, 0, 0, 3], [3, 3, 5, 4, 1]],
@@ -46,7 +46,7 @@ export const nonograms = [
     },
     {
         id: 10,
-        name: 'apple',
+        name: 'Apple',
         width: 15,
         height: 15,
         cluesTop: [[0, 0, 0, 1, 2, 3, 2, 0, 0, 3, 2, 3, 2, 2, 0], [6, 8, 10, 11, 11, 11, 11, 12, 14, 11, 11, 6, 4, 4, 6]],
@@ -56,7 +56,7 @@ export const nonograms = [
     },
     {
         id: 11,
-        name: 'dinosaur',
+        name: 'Dinosaur',
         width: 15,
         height: 15,
         cluesTop: [[7, 0, 2, 2, 1, 0, 0, 0, 0, 0, 0, 4, 12, 3, 0], [2, 12, 6, 4, 5, 6, 7, 7, 7, 7, 8, 7, 1, 7, 2]],
@@ -66,7 +66,7 @@ export const nonograms = [
     },
     {
         id: 12,
-        name: 'sheep',
+        name: 'Sheep',
         width: 15,
         height: 15,
         cluesTop: [[0, 0, 0, 0, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 6, 2, 1, 2, 0, 0, 0, 5, 0, 0, 0], [2, 3, 7, 9, 1, 9, 5, 4, 4, 4, 4, 1, 9, 5, 5]],
@@ -76,7 +76,7 @@ export const nonograms = [
     },
     {
         id: 13,
-        name: 'boat',
+        name: 'Boat',
         width: 15,
         height: 15,
         cluesTop: [[1, 1, 1, 1, 0, 10, 9, 8, 7, 6, 5, 4, 3, 2, 0], [1, 2, 3, 3, 15, 3, 3, 3, 3, 3, 3, 3, 2, 1, 1, 1]],
@@ -86,7 +86,7 @@ export const nonograms = [
     },
     {
         id: 14,
-        name: 'crab',
+        name: 'Crab',
         width: 15,
         height: 15,
         cluesTop: [[5, 0, 2, 0, 1, 0, 0, 0, 0, 0, 1, 0, 2, 0, 4], [1, 7, 2, 0, 1, 1, 0, 0, 0, 1, 1, 2, 6, 1], [1, 1, 1, 3, 1, 1, 1, 0, 1, 1, 1, 3, 1, 1, 1], [2, 1, 1, 5, 7, 8, 9, 9, 9, 8, 7, 5, 1, 1, 2]],

@@ -7,7 +7,7 @@ export let createElement = (options) => {
     if (parent != null) {
         if (removeChildren != null) {
             while (parent.firstChild) {
-                parent.removeChild(parent.firstChild)
+                parent.removeChild(parent.firstChild);
             }
         }
         parent.append(element);
