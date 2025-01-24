@@ -22,8 +22,7 @@ class Timer {
                 this.seconds = 0;
             }
             this.initTimer(); 
-            this.currentTime = (this.timer.textContent)
-            console.log(this.currentTime)
+            this.currentTime = (this.timer.textContent);
         }, 1000);        
     }  
 

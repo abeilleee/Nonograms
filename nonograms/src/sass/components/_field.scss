@@ -1,56 +1,41 @@
 .field {
     display: grid;
-    grid-template-columns: 1fr 5fr;
-    max-width: 325px;
+    grid-template-columns: auto 1fr;
+    grid-template-rows: auto 1fr;
+    grid-gap: 0px;
 
-    &__clues {
-        display: grid;
-        grid-column: 1;
+    &__game {
         grid-row-start: 2;
-        width: 100%;
-
-        &--left {
-            display: grid;
-            grid-column: 1;
-            grid-row-start: 2;
-        }
-
-        &--top {
-            display: grid;
-            grid-column-start: 2;
-            grid-row: 1;
-            grid-template-columns: repeat(5, 1fr);
-        }
-
-    }
-
-
-
-    &__cells {
-        display: grid;
+        grid-row-end: 3;
         grid-column-start: 2;
-        grid-row-start: 2;
-        border: 1px solid black;
-        border-collapse: collapse;
-        width: 100%;
+        grid-column-end: 3;
+        border: 2px solid black;
     }
 }
 
 .row {
-    display: grid;
-    grid-template-columns: repeat(5, 1fr);
+    display: flex;
 
-    &:not(:first-child) {
-        border-top: 1px solid black;
+    &:not(:last-child) {
+        border-bottom: 1px solid black;
     }
 
-
+    &:nth-child(5n):not(:last-child) {
+        border-bottom: 2px solid black;
+    }
 }
 
 .cell {
-    width: 60px;
-    height: 60px;
-    margin: 0 -1px -1px 0;
+    width: 20px;
+    height: 20px;
+
+    &:not(:last-child) {
+        border-right: 1px solid black;
+    }
+
+    &:not(:last-child):nth-child(5n) {
+        border-right: 2px solid black;
+    }
 
     &--clicked {
         background-color: black;
@@ -62,30 +47,59 @@
         background-position: center;
         background-size: contain;
     }
+}
 
-    &:not(:last-child) {
-        border-right: 1px solid black;
+.clues {
+    &-top {
+        grid-row-start: 1;
+        grid-row-end: 2;
+        grid-column-start: 2;
+        grid-column-end: 3;
+        border-top: 2px solid black;
+        border-left: 2px solid black;
+        border-right: 2px solid black;
+    }
+
+    &-left {
+        grid-row-start: 2;
+        grid-row-end: 3;
+        grid-column-start: 1;
+        grid-column-end: 2;
+        border-top: 2px solid black;
+        border-left: 2px solid black;
+        border-bottom: 2px solid black;
     }
 }
 
 .clue {
-    width: 60px;
-    height: 60px;
-    border-top: 1px solid rgb(9, 66, 238);
-    border-right: 1px solid rgb(9, 66, 238);
-    border-bottom: 1px solid rgb(9, 66, 238);
-    border-collapse: unset;
-    margin: 0 -1px -1px 0;
+    width: 20px;
+    height: 20px;
 
-    &-top {
-
+    &-top:not(:last-child) {
+        border-right: 1px solid black;
     }
 
-    &-left {
-        
+    &-top:nth-child(5n):not(:last-child) {
+        border-right: 2px solid black;
     }
 
-    &:first-child{ 
-        border-left: 1px solid rgb(9, 66, 238);
+    &-left:not(:last-child) {
+        border-right: 1px solid black;
+    }
+
+    &-row {
+        display: flex;
+    }
+
+    &-row-top:not(:last-child) {
+        border-bottom: 1px solid black;
+    }
+
+    &-row-left:not(:last-child) {
+        border-bottom: 1px solid black;
+    }
+
+    &-row-left:nth-child(5n):not(:last-child) {
+        border-bottom: 2px solid black;
     }
 }
