@@ -7,8 +7,8 @@ export const timer = new Timer();
 timer.initTimer();
 
 const gameField = new GameField();
-gameField.createTopClues(2, 5);
-gameField.createLeftClues(5, 2);
-gameField.createFieldGame(5, 5);
+gameField.createTopClues(2, 15);
+gameField.createLeftClues(15, 2);
+gameField.createFieldGame(15, 15);
 
 const buttons = new Buttons();
