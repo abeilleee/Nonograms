@@ -57,11 +57,11 @@ const option4 = createElement({ tag: 'option', text: '4', parent: selectTemplate
 const option5 = createElement({ tag: 'option', text: '5', parent: selectTemplate, classes: ['template'], attributes: { value: '5' } });
 
 //buttonsBox
-const buttonsBox = createElement({ tag: 'div', parent: wrapper, classes: ['btn__box'] });
-const resetBtn = createElement({ tag: 'button', text: 'Reset', parent: buttonsBox, classes: ['btn'] });
-const saveGameBtn = createElement({ tag: 'button', text: 'Save game', parent: buttonsBox, classes: ['btn'] });
-const continueBtn = createElement({ tag: 'button', text: 'Continue last game', parent: buttonsBox, classes: ['btn'] });
-const randomGameBtn = createElement({ tag: 'button', text: 'Random game', parent: buttonsBox, classes: ['btn'] });
+// const buttonsBox = createElement({ tag: 'div', parent: wrapper, classes: ['btn__box'] });
+// const resetBtn = createElement({ tag: 'button', text: 'Reset', parent: buttonsBox, classes: ['btn'] });
+// const saveGameBtn = createElement({ tag: 'button', text: 'Save game', parent: buttonsBox, classes: ['btn'] });
+// const continueBtn = createElement({ tag: 'button', text: 'Continue last game', parent: buttonsBox, classes: ['btn'] });
+// const randomGameBtn = createElement({ tag: 'button', text: 'Random game', parent: buttonsBox, classes: ['btn'] });
 
 //field
 

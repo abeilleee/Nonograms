@@ -1,5 +1,6 @@
 import { createElement } from "./createElementFunction";
 import { wrapper } from "./createElements";
+import { timer } from "./app";
 
 export class GameField {
     constructor() {
@@ -57,6 +58,9 @@ export class GameField {
                     if (event.target === cell) {
                         cell.classList.toggle('cell--clicked');
                         cell.classList.remove('cell--crossed');
+                        if (timer.timerOn === false) {
+                            timer.start();
+                        }
                     }
                 });
 
@@ -65,6 +69,10 @@ export class GameField {
                         event.preventDefault();
                         cell.classList.toggle('cell--crossed');
                         cell.classList.remove('cell--clicked');
+
+                        if (timer.timerOn === false) {
+                            timer.start();
+                        }
                     }
                 })
 
@@ -116,12 +124,6 @@ export class GameField {
     }
 
 }
-
-const gameField = new GameField();
-gameField.createTopClues(2, 5);
-gameField.createLeftClues(5, 2);
-gameField.createFieldGame(5, 5);
-
 
 
 // export let createGameField = () => {

@@ -1,13 +1,14 @@
 import { createElement } from "./createElementFunction";
 import { timerBox } from "./createElements";
 
-class Timer {
+export class Timer {
     constructor() {
         this.timer = createElement({ tag: 'div', parent: timerBox, classes: ['timer'] });        
         this.minutes = 0;
         this.seconds = 0;
         this.interval;
         this.currentTime;
+        this.timerOn = false;
     }
 
     initTimer() {
@@ -15,6 +16,7 @@ class Timer {
     }
 
     start() {      
+        this.timerOn = true;
         this.interval = setInterval(() => {
             this.seconds++;     
             if (this.seconds >= 60) {
@@ -28,6 +30,7 @@ class Timer {
 
     stop() {
         clearInterval(this.interval);
+        this.timerOn = false;
     }
 
     getCurrentTime() {
@@ -35,9 +38,8 @@ class Timer {
     }
 }
 
-let timer = new Timer();
-timer.initTimer();
-timer.start();
+
+
 
 
 // let timer12 = new Timer();
