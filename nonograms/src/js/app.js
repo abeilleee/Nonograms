@@ -12,3 +12,4 @@ gameField.createLeftClues(5, 2);
 gameField.createFieldGame(5, 5);
 
 const buttons = new Buttons();
+buttons.resetBtn.addEventListener(('click'), (buttons.reset));

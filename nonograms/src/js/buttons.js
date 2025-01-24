@@ -1,5 +1,7 @@
 import { createElement } from "./createElementFunction";
 import { wrapper } from "./createElements";
+import { timer } from "./app";
+import { GameField } from "./createGameField";
 
 export class Buttons {
     constructor() {
@@ -10,5 +12,11 @@ export class Buttons {
         this.randomGameBtn = createElement({ tag: 'button', text: 'Random game', parent: this.buttonsBox, classes: ['btn'] });
     }
 
+    reset () {
+        timer.stop();
+        timer.initTimer();
+    }
+
 
 }
+

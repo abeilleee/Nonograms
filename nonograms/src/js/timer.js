@@ -30,7 +30,9 @@ export class Timer {
 
     stop() {
         clearInterval(this.interval);
-        this.timerOn = false;
+        this.timerOn = false;     
+        this.minutes = 0;
+        this.seconds = 0;   
     }
 
     getCurrentTime() {

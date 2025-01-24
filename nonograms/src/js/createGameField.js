@@ -43,16 +43,21 @@ export class GameField {
     }
 
     createFieldGame(width, height) {
+        let rowId = 0;
+        let cellId = 0;
         let fieldGame = createElement({ tag: 'div', parent: this.field, classes: ['field__game'] });
         for (let i = 0; i < width; i++) {
             let row = (createElement({ tag: 'div', classes: ['row'] }));
+            row.setAttribute('id', rowId);
             fieldGame.appendChild(row);
             for (let j = 0; j < height; j++) {
                 let cell = createElement({ tag: 'div', classes: ['cell'] });
                 if (width === 5) {
                     cell.classList.add('clue--size60');
-                }
+                }           
+                cell.setAttribute('id', `${rowId}-${cellId}`);     
                 row.appendChild(cell);
+                cellId++;
 
                 cell.addEventListener(('click'), (event) => {
                     if (event.target === cell) {
@@ -77,7 +82,8 @@ export class GameField {
                 })
 
             }
-
+            rowId++;
+            cellId=0;
         }
     }
 
