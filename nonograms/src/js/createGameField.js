@@ -52,6 +52,22 @@ export class GameField {
                     cell.classList.add('clue--size60');
                 }
                 row.appendChild(cell);
+
+                cell.addEventListener(('click'), (event) => {
+                    if (event.target === cell) {
+                        cell.classList.toggle('cell--clicked');
+                        cell.classList.remove('cell--crossed');
+                    }
+                });
+
+                cell.addEventListener(('contextmenu'), (event) => {
+                    if (event.target === cell) {
+                        event.preventDefault();
+                        cell.classList.toggle('cell--crossed');
+                        cell.classList.remove('cell--clicked');
+                    }
+                })
+
             }
 
         }
