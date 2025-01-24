@@ -9,13 +9,13 @@ timer.initTimer();
 
 const gameField = new GameField();
 //
-let puzzle = nonograms[4];
+let puzzle = nonograms[9];
 
 
 gameField.createTopClues(puzzle);
 gameField.createLeftClues(puzzle);
 
-gameField.createFieldGame(5, 5);
+gameField.createFieldGame(puzzle);
 
 gameField.fillClues(puzzle);
 

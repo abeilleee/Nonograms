@@ -59,7 +59,9 @@ export class GameField {
         }
     }
 
-    createFieldGame(width, height) {
+    createFieldGame(puzzle) {
+        let width = puzzle.width;
+        let height = puzzle.height; 
         let rowId = 0;
         let cellId = 0;
         let fieldGame = createElement({ tag: 'div', parent: this.field, classes: ['field__game'] });
