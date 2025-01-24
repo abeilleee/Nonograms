@@ -1,43 +1,57 @@
 import { createElement } from "./createElementFunction";
 import { wrapper } from "./createElements";
 import { timer } from "./app";
+import { nonograms } from "./nonograms";
+import { Buttons } from "./buttons";
 
 export class GameField {
     constructor() {
         this.field = createElement({ tag: 'div', parent: wrapper, classes: ['field'] });
-        this.leftClues = createElement({ tag: 'div', classes: ['field__clues', 'field__clues--left'] });
-        this.topClues = createElement({ tag: 'div', classes: ['field__clues', 'field__clues--top'] });
+        this.leftClues = createElement({ tag: 'div', parent: this.field, classes: ['clues', 'clues-left'] });
+        this.topClues = createElement({ tag: 'div', parent: this.field, classes: ['clues', 'clues-top'] });
         this.cellsGrid = createElement({ tag: 'div', classes: ['field__cells'] });
     }
 
     createTopClues(width, height) {
-        let topClues = createElement({ tag: 'div', parent: this.field, classes: ['clues', 'clues-top'] });
+        let clueRowId = 0;
+        let clueId = 0;
         for (let i = 0; i < width; i++) {
             let clueRow = (createElement({ tag: 'div', classes: ['clue-row', 'clue-row-top'] }));
-            topClues.appendChild(clueRow);
+            clueRow.setAttribute('id', `clueTop${clueRowId}`)
+            this.topClues.appendChild(clueRow);
             for (let j = 0; j < height; j++) {
                 let clue = createElement({ tag: 'div', classes: ['clue', 'clue-top'] });
+                clue.setAttribute('id', `clueTop${clueRowId}-${clueId}`)
                 if (height === 5) {
                     clue.classList.add('clue--size60');
                 }
+                clueId++;
                 clueRow.appendChild(clue);
             }
+            clueRowId++;
+            clueId = 0;
 
         }
     }
 
     createLeftClues(width, height) {
-        let leftClues = createElement({ tag: 'div', parent: this.field, classes: ['clues', 'clues-left'] });
+        let clueRowId = 0;
+        let clueId = 0;
         for (let i = 0; i < width; i++) {
             let clueRow = (createElement({ tag: 'div', classes: ['clue-row', 'clue-row-left'] }));
-            leftClues.appendChild(clueRow);
+            clueRow.setAttribute('id', `clueLeft${clueRowId}`)
+            this.leftClues.appendChild(clueRow);
             for (let j = 0; j < height; j++) {
                 let clue = createElement({ tag: 'div', classes: ['clue', 'clue-left'] });
+                clue.setAttribute('id', `clueLeft${clueRowId}-${clueId}`)
                 if (width === 5) {
                     clue.classList.add('clue--size60');
                 }
+                clueId++;
                 clueRow.appendChild(clue);
             }
+            clueRowId++;
+            clueId = 0;
 
         }
     }
@@ -54,8 +68,8 @@ export class GameField {
                 let cell = createElement({ tag: 'div', classes: ['cell'] });
                 if (width === 5) {
                     cell.classList.add('clue--size60');
-                }           
-                cell.setAttribute('id', `${rowId}-${cellId}`);     
+                }
+                cell.setAttribute('id', `${rowId}-${cellId}`);
                 row.appendChild(cell);
                 cellId++;
 
@@ -83,53 +97,34 @@ export class GameField {
 
             }
             rowId++;
-            cellId=0;
+            cellId = 0;
         }
     }
 
+    fillClues(puzzle) {
+        let arrayTop = nonograms[0].cluesTop;
+        let arrayLeft = nonograms[0].cluesLeft;
 
-    // update(level) {
-    //     while (this.field.firstChild) {
-    //         this.field.removeChild(parent.firstChild)
-    //     }
-    //     this.field.appendChild(this.topClues);
-    //     this.field.appendChild(this.leftClues);        
-    //     this.field.appendChild(this.cellsGrid);
-
-
-    //     if (level === 'easy') {
-    //         for (let i = 0; i < 5; i++) {
-    //             this.row = this.cellsGrid.appendChild(createElement({ tag: 'div', classes: ['row'] }));
-    //             for (let j = 0; j < 5; j++) {
-    //                 let cell = createElement({ tag: 'div', classes: ['cell'] });
-    //                 this.row.appendChild(cell);
-
-    //                 cell.addEventListener(('click'), (event) => {
-    //                     if (event.target === cell) {
-    //                         cell.classList.toggle('cell--clicked');
-    //                         cell.classList.remove('cell--crossed');
-    //                     }
-    //                 });
-
-    //                 cell.addEventListener(('contextmenu'), (event) => {
-    //                     if (event.target === cell) {
-    //                         event.preventDefault();
-    //                         cell.classList.toggle('cell--crossed');
-    //                         cell.classList.remove('cell--clicked');
-    //                     }
-    //                 })
-    //             }
-    //             this.leftClues.appendChild(createElement({ tag: 'div', classes: ['clue', 'clue-left'] }));
-    //             this.topClues.appendChild(createElement({ tag: 'div', classes: ['clue', 'clue-top'] }));
-    //         }
-    //     }
-
-    // }
-    fillClues() {
+        for (let i = 0; i < arrayTop.length; i++) {
+            for (let j = 0; j < arrayTop[0].length; j++) {
+                if (arrayTop[i][j] !== 0) {
+                    document.getElementById(`clueTop${i}-${j}`).textContent = arrayTop[i][j];
+                }
+            }
+        }
+        for (let i = 0; i < arrayLeft.length; i++) {
+            for (let j = 0; j < arrayLeft[0].length; j++) {
+                if (arrayLeft[i][j] !== 0) {
+                    document.getElementById(`clueLeft${i}-${j}`).textContent = arrayLeft[i][j];
+                }
+            }
+        }
 
     }
-
 }
+
+
+
 
 
 // export let createGameField = () => {
