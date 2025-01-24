@@ -10,10 +10,25 @@
         gap: 10px;
     }
 
-    &__box{
+    &__box {
         display: flex;
-        gap: 10px;
+        gap: 5px;
     }
+}
+
+.radioButton {
+    appearance: none;
+}
+
+.label {
+
+    &:hover {
+        cursor: pointer;
+    }
+}
+
+.selected {
+    color: rgb(226, 80, 43);
 }
 
 
@@ -22,8 +37,7 @@
     display: flex;
     gap: 10px;
 
-    &__select{
+    &__select {
         width: 100px;
     }
 }
-

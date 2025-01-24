@@ -11,6 +11,7 @@ export class GameField {
         this.leftClues = createElement({ tag: 'div', parent: this.field, classes: ['clues', 'clues-left'] });
         this.topClues = createElement({ tag: 'div', parent: this.field, classes: ['clues', 'clues-top'] });
         this.cellsGrid = createElement({ tag: 'div', classes: ['field__cells'] });
+        this.fieldGame = createElement({ tag: 'div', parent: this.field, classes: ['field__game'] });
     }
 
     createTopClues(puzzle) {
@@ -40,8 +41,8 @@ export class GameField {
     }
 
     createLeftClues(puzzle) {
-        let width = puzzle.cluesLeft.length; 
-        let height = puzzle.cluesLeft[0].length; 
+        let width = puzzle.cluesLeft.length;
+        let height = puzzle.cluesLeft[0].length;
         let clueRowId = 0;
         let clueId = 0;
         removeChildren(this.leftClues);
@@ -66,14 +67,15 @@ export class GameField {
 
     createFieldGame(puzzle) {
         let width = puzzle.width;
-        let height = puzzle.height; 
+        let height = puzzle.height;
         let rowId = 0;
         let cellId = 0;
-        let fieldGame = createElement({ tag: 'div', parent: this.field, classes: ['field__game'] });
+        removeChildren(this.fieldGame);
+        
         for (let i = 0; i < width; i++) {
             let row = (createElement({ tag: 'div', classes: ['row'] }));
             row.setAttribute('id', rowId);
-            fieldGame.appendChild(row);
+            this.fieldGame.appendChild(row);
             for (let j = 0; j < height; j++) {
                 let cell = createElement({ tag: 'div', classes: ['cell'] });
                 if (width === 5) {

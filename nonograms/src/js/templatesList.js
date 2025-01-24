@@ -1,17 +1,20 @@
 import { createElement } from "./createElementFunction";
-import { selectTemplate } from "./createElements";
+import { levelsWrapper } from "./createElements";
 import { nonograms } from "./nonograms";
-import { GameField } from "./createGameField";
 import { gameField } from "./app";
 
 export class TemplateList {
     constructor() {
-        this.list = selectTemplate;
+        this.templates = createElement({ tag: 'div', parent: levelsWrapper, classes: ['templates'] });
+        this.templateLabel = createElement({
+            tag: 'label', text: 'Templates:', parent: this.templates, classes: ['templates__label'], attributes: { for: 'templates' }
+        });
+        this.selectTemplate = createElement({ tag: 'select', parent: this.templates, classes: ['templates__select'], id: 'templates' });
     }
 
     fillList(level) {
-        while (this.list.firstChild) {
-            this.list.removeChild(this.list.firstChild);
+        while (this.selectTemplate.firstChild) {
+            this.selectTemplate.removeChild(this.selectTemplate.firstChild);
         }
 
         if (level === 'easy') {
@@ -19,18 +22,18 @@ export class TemplateList {
                 let templateName = nonograms[i].name;
                 let option = (createElement({
                     tag: 'option', text: `${templateName}`,
-                    parent: selectTemplate, classes: ['template'], attributes: { value: `${i}` }
+                    parent: this.selectTemplate, classes: ['template'], attributes: { value: `${i}` }
                 }));
-                this.list.appendChild(option);
+                this.selectTemplate.appendChild(option);
             }
         } else if (level === 'medium') {
             for (let i = 5; i < 10; i++) {
                 let templateName = nonograms[i].name;
                 let option = (createElement({
                     tag: 'option', text: `${templateName}`,
-                    parent: selectTemplate, classes: ['template'], attributes: { value: `${i}` }
+                    parent: this.selectTemplate, classes: ['template'], attributes: { value: `${i}` }
                 }));
-                this.list.appendChild(option);
+                this.selectTemplate.appendChild(option);
             }
         }
         // } else if (level === 'hard') {
@@ -42,8 +45,8 @@ export class TemplateList {
         //         }));
         //         this.list.appendChild(option);
         //     }
-        
-        this.list.addEventListener('change', (event) => {
+
+        this.selectTemplate.addEventListener('change', (event) => {
             let puzzle = nonograms[event.target.value];
             gameField.createTopClues(puzzle);
             gameField.createLeftClues(puzzle);
