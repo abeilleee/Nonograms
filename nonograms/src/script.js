@@ -7,6 +7,7 @@ import './js/nonograms';
 import './js/levels';
 import './js/templatesList';
 import './js/removeChildrenFunction';
+import './js/randomGameBtn';
 import './sass/style.scss';
 
 

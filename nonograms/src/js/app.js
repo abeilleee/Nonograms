@@ -4,6 +4,7 @@ import { Buttons } from "./buttons";
 import { nonograms } from "./nonograms";
 import { TemplateList } from "./templatesList";
 import { Levels } from "./levels";
+import { RandomGame } from "./randomGameBtn";
 
 
 export const timer = new Timer();
@@ -20,6 +21,9 @@ levels.levelsBox.addEventListener(('click'), (event) => {
 //choose template
 export let template = new TemplateList();
 template.fillList('easy');
+
+//random game
+export const randomGameBtn = new RandomGame();
 //field game
 export const gameField = new GameField();
 let puzzle = nonograms[0];

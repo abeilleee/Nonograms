@@ -5,9 +5,9 @@
     &__wrapper {
         display: flex;
         justify-content: center;
-        align-items: center;
-        flex-direction: row;
-        gap: 10px;
+        align-items: left;
+        flex-direction: column;
+        gap: 15px;
     }
 
     &__box {

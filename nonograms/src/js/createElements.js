@@ -8,8 +8,10 @@ const title = createElement({ tag: 'h1', text: 'Nonograms', parent: container, c
 const main = createElement({ tag: 'main', parent: document.body, classes: ['main'] });
 const containerMain = createElement({ tag: 'div', parent: main, classes: ['container'] });
 export const wrapper = createElement({ tag: 'div', parent: containerMain, classes: ['wrapper'] });
+//upperBox
+export const upperBox = createElement({ tag: 'div', parent: wrapper, classes: ['upper-box'] });
 //levels box
-export const levelsWrapper = createElement({ tag: 'div', parent: wrapper, classes: ['levels__wrapper'] });
+export const levelsWrapper = createElement({ tag: 'div', parent: upperBox, classes: ['levels__wrapper'] });
 // const levels = createElement({ tag: 'div', parent: levelsWrapper, classes: ['levels'] });
 // const levelsTitle = createElement({ tag: 'div', text: 'Level:', parent: levels, classes: ['title'] });
 // const levelsBox = createElement({ tag: 'div', parent: levels, classes: ['levels__box'] });
