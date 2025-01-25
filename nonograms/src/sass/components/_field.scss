@@ -57,6 +57,11 @@
         background-position: center;
         background-size: contain;
     }
+
+    &:hover {
+        cursor: pointer;
+        background-color: rgba(215, 215, 215, 0.589);
+    }
 }
 
 .clues {
@@ -84,6 +89,8 @@
 .clue {
     width: 30px;
     height: 30px;
+    text-align: center;
+    font-size: 18px;
 
     &--size60 {
         width: 40px;

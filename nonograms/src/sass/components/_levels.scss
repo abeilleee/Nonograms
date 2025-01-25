@@ -31,7 +31,9 @@
     color: rgb(226, 80, 43);
 }
 
-
+.templates__select:hover{
+cursor: pointer;
+}
 
 .templates {
     display: flex;
