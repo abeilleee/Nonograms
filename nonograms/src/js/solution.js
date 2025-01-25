@@ -5,12 +5,12 @@ export class Solution {
 
     }
 
-    getSolution() {
+    showSolution() {
 
     }
 
-    checkSolution() {
-        const solution = nonograms[0].puzzle.flat(); // удалить поменять на универсальный аргумент
+    checkSolution(puzzle) {
+        const solution = nonograms[puzzle].puzzle.flat(); // удалить поменять на универсальный аргумент
         const filledCellsAmount = solution.filter((elem) => elem > 0).length; //amount of '1';
 
         const cells = document.querySelectorAll('.cell'); //все ячейки
@@ -31,11 +31,9 @@ export class Solution {
                 }
             }
         }       
-
         console.log('userSolution: '+userSolution);
         console.log('solution: '+solution);
         console.log('result: '+result);
-
     }
 }
 
