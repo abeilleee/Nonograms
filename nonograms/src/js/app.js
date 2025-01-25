@@ -23,7 +23,12 @@ export let template = new TemplateList();
 template.fillList('easy');
 
 //random game
-export const randomGameBtn = new RandomGame();
+export const randomBtn = new RandomGame();
+
+randomBtn.randomGameBtn.addEventListener(('click'), (event) => {
+    randomBtn.getRandomGame();
+});
+
 //field game
 export const gameField = new GameField();
 let puzzle = nonograms[0];

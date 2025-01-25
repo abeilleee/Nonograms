@@ -71,7 +71,7 @@ export class GameField {
         let rowId = 0;
         let cellId = 0;
         removeChildren(this.fieldGame);
-        
+
         for (let i = 0; i < width; i++) {
             let row = (createElement({ tag: 'div', classes: ['row'] }));
             row.setAttribute('id', rowId);
@@ -132,6 +132,7 @@ export class GameField {
             }
         }
     }
+
 }
 
 
