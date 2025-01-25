@@ -1,6 +1,7 @@
 .levels {
     display: flex;
     gap: 5px;
+    align-items: center;
 
     &__wrapper {
         display: flex;
@@ -21,6 +22,9 @@
 }
 
 .label {
+    padding: 8px;
+    background-color: rgb(255, 64, 0);
+    border-radius: 4px;
 
     &:hover {
         cursor: pointer;
@@ -28,16 +32,18 @@
 }
 
 .selected {
-    color: rgb(226, 80, 43);
+    color: rgb(255, 255, 255);
+    background-color: rgb(131, 34, 2);
 }
 
-.templates__select:hover{
-cursor: pointer;
+.templates__select:hover {
+    cursor: pointer;
 }
 
 .templates {
     display: flex;
     gap: 10px;
+    align-items: center;
 
     &__select {
         width: 100px;
