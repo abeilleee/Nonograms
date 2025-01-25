@@ -11,7 +11,7 @@ export const timer = new Timer();
 timer.initTimer();
 
 //levels
-let levels = new Levels();
+export let levels = new Levels();
 
 levels.levelsBox.addEventListener(('click'), (event) => {
     let target = event.target;

@@ -64,6 +64,50 @@ export class GameField {
             clueId = 0;
         }
     }
+    // createLeftClues(puzzle) {
+
+    //     let width = puzzle.cluesLeft.length;
+    //     let height = puzzle.cluesLeft[0].length;
+    //     let clueRowId = 0;
+    //     let clueId = 0;
+    //     removeChildren(this.leftClues);
+    //     //
+
+    //     let count = 0;
+    //     for (let i = 0; i < 5; i++) {         
+    //         console.log('count'+count)  
+    //         let clueRow = (createElement({ tag: 'div', classes: ['clue-row', 'clue-row-left'] }));
+    //         this.leftClues.appendChild(clueRow);
+    //         for (let j = 0; j < 4; j++) {
+    //             if (puzzle.puzzle[i][j] === 1) {
+    //                 let clue = createElement({ tag: 'div', classes: ['clue', 'clue-left'] });
+    //                 clueRow.appendChild(clue);
+    //                 count++;
+    //             } else if (puzzle.puzzle[i][j] === 0) {
+    //                 let clue = createElement({ tag: 'div',text: `${count}`, classes: ['clue', 'clue-left'] });
+    //                 clueRow.appendChild(clue);
+    //                 count =0;
+    //             }
+    //         }
+    //     }
+
+        // for (let i = 0; i < width; i++) {
+        //     let clueRow = (createElement({ tag: 'div', classes: ['clue-row', 'clue-row-left'] }));
+        //     clueRow.setAttribute('id', `clueLeft${clueRowId}`)
+        //     this.leftClues.appendChild(clueRow);
+        //     for (let j = 0; j < height; j++) {
+        //         let clue = createElement({ tag: 'div', classes: ['clue', 'clue-left'] });
+        //         clue.setAttribute('id', `clueLeft${clueRowId}-${clueId}`)
+        //         if (width === 5) {
+        //             clue.classList.add('clue--size60');
+        //         }
+        //         clueId++;
+        //         clueRow.appendChild(clue);
+        //     }
+        //     clueRowId++;
+        //     clueId = 0;
+        // }
+    
 
     createFieldGame(puzzle) {
         let width = puzzle.width;

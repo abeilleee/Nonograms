@@ -53,5 +53,6 @@ export class TemplateList {
             gameField.createFieldGame(puzzle);
             gameField.fillClues(puzzle);
         });
+        
     }
 }
