@@ -12,6 +12,8 @@ export const wrapper = createElement({ tag: 'div', parent: containerMain, classe
 export const upperBox = createElement({ tag: 'div', parent: wrapper, classes: ['upper-box'] });
 //levels box
 export const levelsWrapper = createElement({ tag: 'div', parent: upperBox, classes: ['levels__wrapper'] });
+export const rightBox = createElement({ tag: 'div', parent: upperBox, classes: ['right-box'] });
+export const theme = createElement({ tag: 'div', parent: rightBox, classes: ['theme'] });
 // const levels = createElement({ tag: 'div', parent: levelsWrapper, classes: ['levels'] });
 // const levelsTitle = createElement({ tag: 'div', text: 'Level:', parent: levels, classes: ['title'] });
 // const levelsBox = createElement({ tag: 'div', parent: levels, classes: ['levels__box'] });

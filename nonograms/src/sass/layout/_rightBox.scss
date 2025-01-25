@@ -1,0 +1,15 @@
+.right-box{
+    @include flex-center;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.theme {
+    background: url(../assets/images/moon.svg);
+    width: 26px;
+    height: 26px;
+
+    &:hover{
+        cursor: pointer;
+    }
+}

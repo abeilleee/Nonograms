@@ -1,6 +1,10 @@
 .header{
-    display: flex;
+    @include flex-center;
     padding: 10px;
-    justify-content: center;
+    
+
+    &__title {
+        font-weight: 600;
+    }
     
 }

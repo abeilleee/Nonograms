@@ -14,7 +14,7 @@
         grid-row-end: 3;
         grid-column-start: 2;
         grid-column-end: 3;
-        border: 2px solid black;
+        border: 2px solid $font-color;
     }
 }
 
@@ -22,11 +22,11 @@
     display: flex;
 
     &:not(:last-child) {
-        border-bottom: 1px solid black;
+        border-bottom: 1px solid $font-color;
     }
 
     &:nth-child(5n):not(:last-child) {
-        border-bottom: 2px solid black;
+        border-bottom: 2px solid $font-color;
     }
 }
 
@@ -40,15 +40,15 @@
     }
 
     &:not(:last-child) {
-        border-right: 1px solid black;
+        border-right: 1px solid $font-color;
     }
 
     &:not(:last-child):nth-child(5n) {
-        border-right: 2px solid black;
+        border-right: 2px solid $font-color;
     }
 
     &--clicked {
-        background-color: black;
+        background-color: $font-color;
     }
 
     &--crossed {
@@ -69,9 +69,9 @@
         grid-row-end: 2;
         grid-column-start: 2;
         grid-column-end: 3;
-        border-top: 2px solid black;
-        border-left: 2px solid black;
-        border-right: 2px solid black;
+        border-top: 2px solid $font-color;
+        border-left: 2px solid $font-color;
+        border-right: 2px solid $font-color;
     }
 
     &-left {
@@ -79,9 +79,9 @@
         grid-row-end: 3;
         grid-column-start: 1;
         grid-column-end: 2;
-        border-top: 2px solid black;
-        border-left: 2px solid black;
-        border-bottom: 2px solid black;
+        border-top: 2px solid $font-color;
+        border-left: 2px solid $font-color;
+        border-bottom: 2px solid $font-color;
     }
 }
 
@@ -97,30 +97,30 @@
     }
 
     &-top:not(:last-child) {
-        border-right: 1px solid black;
+        border-right: 1px solid $font-color;
     }
 
     &-top:nth-child(5n):not(:last-child) {
-        border-right: 2px solid black;
+        border-right: 2px solid $font-color;
     }
 
-    &-left:not(:last-child) {
-        // border-right: 1px solid black;
-    }
+    // &-left:not(:last-child) {
+    //     // border-right: 1px solid black;
+    // }
 
     &-row {
         display: flex;
     }
 
-    &-row-top:not(:last-child) {
-        // border-bottom: 1px solid black;
-    }
+    // &-row-top:not(:last-child) {
+    //     // border-bottom: 1px solid black;
+    // }
 
     &-row-left:not(:last-child) {
-        border-bottom: 1px solid black;
+        border-bottom: 1px solid $font-color;
     }
 
     &-row-left:nth-child(5n):not(:last-child) {
-        border-bottom: 2px solid black;
+        border-bottom: 2px solid $font-color;
     }
 }

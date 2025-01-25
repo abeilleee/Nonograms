@@ -1,3 +1,5 @@
 body {
-    background: #f67d58;
+    background:
+        repeating-linear-gradient(transparent, transparent 20px, rgb(214, 214, 214) 22px),
+        repeating-linear-gradient(90deg, transparent, transparent 20px, rgb(197, 197, 197) 22px);
 }

@@ -66,7 +66,7 @@ export const nonograms = [
     },
     {
         id: 5,
-        name: 'The cat on the fence',
+        name: 'The cat',
         width: 10,
         height: 10,
         cluesTop: [[0, 0, 0, 0, 2, 0, 0, 0, 0, 0], [0, 4, 1, 0, 1, 0, 0, 1, 0, 0], [1,3,5,9,3,4,4,3,1,3]],

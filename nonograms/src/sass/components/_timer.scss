@@ -1,4 +1,4 @@
 .timer {
-    display: flex;
+    @include flex-center;
     font-size: 22px;
 }
