@@ -35,16 +35,17 @@ export class TemplateList {
                 }));
                 this.selectTemplate.appendChild(option);
             }
+
+        } else if (level === 'hard') {
+            for (let i = 10; i < 15; i++) {
+                let templateName = nonograms[i].name;
+                let option = (createElement({
+                    tag: 'option', text: `${templateName}`,
+                    parent: this.selectTemplate, classes: ['template'], attributes: { value: `${i}` }
+                }));
+                this.selectTemplate.appendChild(option);
+            }
         }
-        // } else if (level === 'hard') {
-        //     for (let i = 10; i < 19; i++) {
-        //         let templateName = nonograms[i].name;
-        //         let option = (createElement({
-        //             tag: 'option', text: `${templateName}`,
-        //             parent: selectTemplate, classes: ['template'], attributes: { value: `${i}` }
-        //         }));
-        //         this.list.appendChild(option);
-        //     }
 
         this.selectTemplate.addEventListener('change', (event) => {
             let puzzle = nonograms[event.target.value];
@@ -53,6 +54,6 @@ export class TemplateList {
             gameField.createFieldGame(puzzle);
             gameField.fillClues(puzzle);
         });
-        
+
     }
 }

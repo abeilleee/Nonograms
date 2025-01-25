@@ -45,7 +45,7 @@ export class Levels {
     }
 
     selectLevel(target) {
-        if (target === this.labelEasy || target <= 3) {
+        if (target === this.labelEasy || (target >=0 && target <= 4)) {
             this.labelEasy.classList.add('selected');
             this.labelMedium.classList.remove('selected');
             this.labelHard.classList.remove('selected');
@@ -54,7 +54,7 @@ export class Levels {
             gameField.createLeftClues(nonograms[0]);
             gameField.createFieldGame(nonograms[0]);
             gameField.fillClues(nonograms[0]);
-        } else if (target === this.labelMedium || target <= 6) {
+        } else if (target === this.labelMedium || (target >=5 && target <= 9)) {
             this.labelMedium.classList.add('selected');
             this.labelEasy.classList.remove('selected');
             this.labelHard.classList.remove('selected');
@@ -63,7 +63,7 @@ export class Levels {
             gameField.createLeftClues(nonograms[5]);
             gameField.createFieldGame(nonograms[5]);
             gameField.fillClues(nonograms[5]);
-        } else if (target === this.labelHard || target <= 10) {
+        } else if (target === this.labelHard || (target >=10 && target <= 14)) {
             this.labelHard.classList.add('selected');
             this.labelMedium.classList.remove('selected');
             this.labelEasy.classList.remove('selected');
