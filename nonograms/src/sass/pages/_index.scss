@@ -1,5 +1,5 @@
 body {
     background:
-        repeating-linear-gradient(transparent, transparent 20px, rgb(214, 214, 214) 22px),
-        repeating-linear-gradient(90deg, transparent, transparent 20px, rgb(197, 197, 197) 22px);
+        repeating-linear-gradient(transparent, transparent 20px, var(--body-bg-color) 22px),
+        repeating-linear-gradient(90deg, transparent, transparent 20px, var(--body-bg-color) 22px);
 }

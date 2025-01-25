@@ -1,6 +1,6 @@
 .btn {
     @include flex-center;
-    background-color: #fff;
+    background-color: var(--btn-bg-color);
     background-position: 0 90%;
     background-repeat: repeat no-repeat;
     background-size: 4px 3px;
@@ -8,7 +8,7 @@
     border-width: 2px;
     box-shadow: rgba(0, 0, 0, .2) 15px 28px 25px -18px;
     box-sizing: border-box;
-    color: #41403e;
+    color: var(--btn-text-color);
     font-size: 1rem;
     padding: 8px;
     transition: all 200ms ease-in-out;
