@@ -5,6 +5,7 @@ import { nonograms } from "./nonograms";
 import { TemplateList } from "./templatesList";
 import { Levels } from "./levels";
 import { RandomGame } from "./randomGameBtn";
+import { Solution } from "./solution";
 
 
 export const timer = new Timer();
@@ -39,3 +40,7 @@ gameField.fillClues(puzzle);
 
 const buttons = new Buttons();
 buttons.resetBtn.addEventListener(('click'), (buttons.reset));
+
+
+//solution
+export let solution = new Solution();

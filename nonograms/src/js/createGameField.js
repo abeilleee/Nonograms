@@ -4,6 +4,7 @@ import { timer } from "./app";
 import { nonograms } from "./nonograms";
 import { Buttons } from "./buttons";
 import { removeChildren } from "./removeChildrenFunction";
+import { solution } from "./app";
 
 export class GameField {
     constructor() {
@@ -137,6 +138,8 @@ export class GameField {
                             timer.start();
                         }
                     }
+                    solution.checkSolution();
+                    
                 });
 
                 cell.addEventListener(('contextmenu'), (event) => {

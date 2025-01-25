@@ -10,6 +10,7 @@ import './js/removeChildrenFunction';
 import './js/randomGameBtn';
 import './js/modalWindow';
 import './js/functions';
+import './js/solution';
 import './sass/style.scss';
 
 
