@@ -99,7 +99,7 @@
     }
 
     &-left:not(:last-child) {
-        border-right: 1px solid black;
+        // border-right: 1px solid black;
     }
 
     &-row {
@@ -107,7 +107,7 @@
     }
 
     &-row-top:not(:last-child) {
-        border-bottom: 1px solid black;
+        // border-bottom: 1px solid black;
     }
 
     &-row-left:not(:last-child) {
