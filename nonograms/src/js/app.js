@@ -41,6 +41,11 @@ gameField.fillClues(puzzle);
 
 const buttons = new Buttons();
 buttons.resetBtn.addEventListener(('click'), (buttons.reset));
+buttons.solutionBtn.addEventListener(('click'), (event) => {
+    let target = event.target;
+    buttons.showSolution(target);
+});
+
 
 
 //solution

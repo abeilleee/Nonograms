@@ -19,7 +19,7 @@ const themes = {
         '--font-color': '#d4d3d3',
         '--body-bg-color': '#2a2a2a',
         '--body-bg-lines-color': '#393939',
-        '--btn-bg-color': '#9c9b9b',
+        '--btn-bg-color': '#717171',
         '--btn-text-color': '#41403e',
     }
 }
