@@ -10,12 +10,14 @@ import { buttons } from "./app";
 import { levels } from "./app";
 
 export class GameField {
+    
     constructor() {
         this.field = createElement({ tag: 'div', parent: wrapper, classes: ['field'] });
         this.leftClues = createElement({ tag: 'div', parent: this.field, classes: ['clues', 'clues-left'] });
         this.topClues = createElement({ tag: 'div', parent: this.field, classes: ['clues', 'clues-top'] });
         this.cellsGrid = createElement({ tag: 'div', classes: ['field__cells'] });
         this.fieldGame = createElement({ tag: 'div', parent: this.field, classes: ['field__game'] });
+        this.currentGameId;
     }
 
     createTopClues(puzzle) {
@@ -70,6 +72,8 @@ export class GameField {
     }   
 
     createFieldGame(puzzle) {
+        this.currentGameId = arguments[0].id;
+        console.log(this.currentGameId);
         let width = puzzle.width;
         let height = puzzle.height;
         let rowId = 0;

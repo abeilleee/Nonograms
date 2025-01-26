@@ -31,6 +31,8 @@ buttons.resetBtn.addEventListener(('click'),(event) => {
 buttons.solutionBtn.addEventListener(('click'), (event) => {
     let target = event.target;
     buttons.showSolution(target);
+    timer.stop();
+    timer.initTimer();
 });
 
 //choose template
@@ -58,3 +60,4 @@ export const modal = new ModalWindow();
 
 
 
+console.log(nonograms[7].puzzle)

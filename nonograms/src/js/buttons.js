@@ -29,17 +29,19 @@ export class Buttons {
     }
 
     showSolution(target) {
+        let currentGameId = gameField.currentGameId;
+        console.log('currenGameID solution: '+ currentGameId);
         gameField.cleanField();
         if ((target) === this.solutionBtn) {
             this.solutionBtn.classList.add('selected');
             this.saveGameBtn.classList.add('disabledBtn');
             this.continueBtn.classList.add('disabledBtn');
             document.querySelector('.field').classList.add('disabled');
-            const solution = nonograms[0].puzzle;
+            const solution = nonograms[currentGameId].puzzle;
             const cells = document.querySelectorAll('.cell'); //все ячейки на поле
             for (let i = 0; i < solution.length; i++) {
                 for (let j = 0; j < solution.length; j++) {
-                    if (nonograms[0].puzzle[i][j] === 1) {
+                    if (nonograms[currentGameId].puzzle[i][j] === 1) {
                         let cell1 = document.getElementById(`${i}-${j}`);
                         cell1.classList.add('cell--clicked');
                     }
