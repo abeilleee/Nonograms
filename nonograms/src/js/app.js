@@ -45,5 +45,4 @@ buttons.resetBtn.addEventListener(('click'), (buttons.reset));
 //solution
 export let solution = new Solution();
 
-// const root = document.querySelector(':root');
-// root.style.setProperty('--wrapper-bg-color', 'black');
+

@@ -11,6 +11,7 @@ import './js/randomGameBtn';
 import './js/modalWindow';
 import './js/functions';
 import './js/solution';
+import './js/theme';
 import './sass/style.scss';
 
 
