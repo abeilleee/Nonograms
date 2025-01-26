@@ -76,6 +76,8 @@ export class GameField {
         let cellId = 0;
         removeChildren(this.fieldGame);
         buttons.removeDisabled();
+        this.field.classList.remove('disabled');
+        buttons.solutionBtn.classList.remove('selected');
 
         for (let i = 0; i < width; i++) {
             let row = (createElement({ tag: 'div', classes: ['row'] }));
