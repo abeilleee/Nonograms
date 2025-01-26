@@ -30,6 +30,7 @@ export class Solution {
             result = checkArrays(solution, userSolution);
             if (result === true) {
                 modal.viewModal();
+                document.querySelector('btn').setAttribute.disabled = true;
             } 
         }       
         console.log('cellsFilled: ' + cellsFilled.length);

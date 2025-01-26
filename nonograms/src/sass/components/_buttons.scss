@@ -29,3 +29,7 @@
         transform: translate3d(0, 2px, 0);
     }
 }
+
+.disabled {
+    pointer-events: none;
+}

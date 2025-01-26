@@ -6,6 +6,7 @@ import { GameField } from "./createGameField";
 import { gameField } from "./app";
 import { nonograms } from "./nonograms";
 import { upperBox } from "./createElements";
+import { timer } from "./app";
 
 export class Levels {
     constructor() {
@@ -54,6 +55,8 @@ export class Levels {
             gameField.createLeftClues(nonograms[0]);
             gameField.createFieldGame(nonograms[0]);
             gameField.fillClues(nonograms[0]);
+            timer.stop();
+            timer.initTimer();
         } else if (target === this.labelMedium || (target >=5 && target <= 9)) {
             this.labelMedium.classList.add('selected');
             this.labelEasy.classList.remove('selected');
@@ -63,6 +66,8 @@ export class Levels {
             gameField.createLeftClues(nonograms[5]);
             gameField.createFieldGame(nonograms[5]);
             gameField.fillClues(nonograms[5]);
+            timer.stop();
+            timer.initTimer();
         } else if (target === this.labelHard || (target >=10 && target <= 14)) {
             this.labelHard.classList.add('selected');
             this.labelMedium.classList.remove('selected');
@@ -72,6 +77,8 @@ export class Levels {
             gameField.createLeftClues(nonograms[10]);
             gameField.createFieldGame(nonograms[10]);
             gameField.fillClues(nonograms[10]);
+            timer.stop();
+            timer.initTimer();
         }
     }
 

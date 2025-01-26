@@ -2,8 +2,11 @@ import { createElement } from "./createElementFunction";
 import { wrapper } from "./createElements";
 import { timer } from "./app";
 import { GameField } from "./createGameField";
+import { levels } from "./app";
 
 export class Buttons {
+    #disabled = false;
+
     constructor() {
         this.buttonsBox = createElement({ tag: 'div', parent: wrapper, classes: ['btn__box'] });
         this.resetBtn = createElement({ tag: 'button', text: 'Reset', parent: this.buttonsBox, classes: ['btn'] });
@@ -22,7 +25,8 @@ export class Buttons {
         })
         crossedCells.forEach((cell) => {
             cell.classList.remove('cell--crossed');
-        })
+        });
+        levels.setDisable();
     }
 
 

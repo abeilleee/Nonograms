@@ -6,6 +6,8 @@ import { Buttons } from "./buttons";
 import { removeChildren } from "./removeChildrenFunction";
 import { solution } from "./app";
 
+import { levels } from "./app";
+
 export class GameField {
     constructor() {
         this.field = createElement({ tag: 'div', parent: wrapper, classes: ['field'] });
@@ -139,7 +141,6 @@ export class GameField {
                         }
                     }
                     solution.checkSolution(puzzle);
-                    
                 });
 
                 cell.addEventListener(('contextmenu'), (event) => {

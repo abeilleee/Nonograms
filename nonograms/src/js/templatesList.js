@@ -1,7 +1,7 @@
 import { createElement } from "./createElementFunction";
 import { levelsWrapper } from "./createElements";
 import { nonograms } from "./nonograms";
-import { gameField } from "./app";
+import { gameField, timer } from "./app";
 
 export class TemplateList {
     constructor() {
@@ -53,6 +53,8 @@ export class TemplateList {
             gameField.createLeftClues(puzzle);
             gameField.createFieldGame(puzzle);
             gameField.fillClues(puzzle);
+            timer.stop();
+            timer.initTimer();
         });
 
     }

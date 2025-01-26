@@ -1,5 +1,6 @@
 import { createElement } from "./createElementFunction";
 import { timerBox } from "./createElements";
+import { levels } from "./app";
 
 export class Timer {
     constructor() {
@@ -27,7 +28,7 @@ export class Timer {
             this.initTimer(); 
             this.currentTime = this.timer.textContent;
             this.currentTimeSeconds = `${this.minutes*60 +this.seconds }`;
-        }, 1000);        
+        }, 1000);   
     }  
 
     stop() {
