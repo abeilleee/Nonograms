@@ -68,10 +68,10 @@ export class Levels {
             this.labelMedium.classList.remove('selected');
             this.labelEasy.classList.remove('selected');
             template.fillList('hard');
-            gameField.createTopClues(nonograms[6]);
-            gameField.createLeftClues(nonograms[6]);
-            gameField.createFieldGame(nonograms[6]);
-            gameField.fillClues(nonograms[6]);
+            gameField.createTopClues(nonograms[10]);
+            gameField.createLeftClues(nonograms[10]);
+            gameField.createFieldGame(nonograms[10]);
+            gameField.fillClues(nonograms[10]);
         }
     }
 
