@@ -73,7 +73,6 @@ export class GameField {
 
     createFieldGame(puzzle) {
         this.currentGameId = arguments[0].id;
-        console.log(this.currentGameId);
         let width = puzzle.width;
         let height = puzzle.height;
         let rowId = 0;
@@ -148,6 +147,7 @@ export class GameField {
     cleanField() {
         const cells = document.querySelectorAll('.cell');
         cells.forEach((elem) => elem.classList.remove('cell--clicked'));
+        cells.forEach((elem) => elem.classList.remove('cell--crossed'));
     }
 
 }

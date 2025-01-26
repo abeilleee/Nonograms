@@ -58,6 +58,3 @@ gameField.fillClues(puzzle);
 //modal
 export const modal = new ModalWindow();
 
-
-
-console.log(nonograms[7].puzzle)
