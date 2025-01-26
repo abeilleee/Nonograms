@@ -10,7 +10,7 @@ import { upperBox } from "./createElements";
 export class Levels {
     constructor() {
         this.levels = createElement({ tag: 'div', parent: levelsWrapper, classes: ['levels'] });
-        this.levelsTitle = createElement({ tag: 'div', text: 'Level:', parent: this.levels, classes: ['title'] });
+        this.levelsTitle = createElement({ tag: 'div', text: 'Level:', parent: this.levels, classes: ['levels__title'] });
         this.levelsBox = createElement({ tag: 'div', parent: this.levels, classes: ['levels__box'] });
         this.levelEasy = createElement({
             tag: 'input',

@@ -11,7 +11,7 @@
     color: inherit;
     font-size: 1rem;
     padding: 8px;
-    transition: all 200ms ease-in-out;
+    transition: var(--transition);
     border-bottom-left-radius: 15px 255px;
     border-bottom-right-radius: 225px 15px;
     border-top-left-radius: 255px 15px;
