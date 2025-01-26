@@ -3,6 +3,7 @@ import { wrapper } from "./createElements";
 import { timer } from "./app";
 import { levels } from "./app";
 import { nonograms } from "./nonograms";
+import { gameField } from "./app";
 
 
 export class Buttons {
@@ -25,10 +26,10 @@ export class Buttons {
         crossedCells.forEach((cell) => {
             cell.classList.remove('cell--crossed');
         });
-        levels.setDisable();
     }
 
     showSolution(target) {
+        gameField.cleanField();
         if ((target) === this.solutionBtn) {
             this.solutionBtn.classList.add('selected');
             this.saveGameBtn.classList.add('disabledBtn');

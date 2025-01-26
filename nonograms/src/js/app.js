@@ -5,7 +5,7 @@ import { nonograms } from "./nonograms";
 import { TemplateList } from "./templatesList";
 import { Levels } from "./levels";
 import { RandomGame } from "./randomGameBtn";
-import { Solution } from "./solution";
+import { checkSolution } from "./checkSolution";
 import { ModalWindow } from "./modalWindow";
 
 
@@ -14,7 +14,6 @@ timer.initTimer();
 
 //levels
 export let levels = new Levels();
-
 levels.levelsBox.addEventListener(('click'), (event) => {
     let target = event.target;
     levels.selectLevel(target);
@@ -26,7 +25,6 @@ template.fillList('easy');
 
 //random game
 export const randomBtn = new RandomGame();
-
 randomBtn.randomGameBtn.addEventListener(('click'), (event) => {
     randomBtn.getRandomGame();
 });
@@ -39,19 +37,19 @@ gameField.createLeftClues(puzzle);
 gameField.createFieldGame(puzzle);
 gameField.fillClues(puzzle);
 
-const buttons = new Buttons();
-buttons.resetBtn.addEventListener(('click'), (buttons.reset));
+//buttons
+export const buttons = new Buttons();
+buttons.resetBtn.addEventListener(('click'),(event) => {
+    buttons.reset();
+    buttons.solutionBtn.classList.remove('selected');
+    gameField.field.classList.remove('disabled');
+});
 buttons.solutionBtn.addEventListener(('click'), (event) => {
     let target = event.target;
     buttons.showSolution(target);
 });
 
-
-
-//solution
-export let solution = new Solution();
-
-//
+//modal
 export const modal = new ModalWindow();
 
 

@@ -1,5 +1,5 @@
 import { createElement } from "./createElementFunction";
-// import { Timer } from "./timer";
+import { buttons } from "./app";
 import { timer } from "./app";
 
 export class ModalWindow {
@@ -23,6 +23,10 @@ export class ModalWindow {
             document.body.classList.remove('hidden');
             this.modalWrapper.classList.remove('open');
         });
+        buttons.saveGameBtn.classList.add('disabledBtn');
+        buttons.continueBtn.classList.add('disabledBtn');
+        buttons.solutionBtn.classList.add('disabledBtn');
+        document.querySelector('.field').classList.add('disabled');
     }
 
     closeModal() {
