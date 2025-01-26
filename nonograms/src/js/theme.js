@@ -1,6 +1,7 @@
-import { theme } from "./createElements";
+import { themeBtn } from "./createElements";
 
 let root = document.querySelector(':root');
+let tableItem = document.querySelector('.table');
 
 const themes = {
     default: {
@@ -32,6 +33,10 @@ if (!localStorage.getItem('isDarkTheme')) {
 
 function changeTheme() {
     const theme = isDarkTheme ? 'dark' : 'default';
+    const icon = isDarkTheme ? 'url(./dist/assets/sun.svg)' : 'url(./dist/assets/moon.svg)';
+    const table = isDarkTheme ? 'url(./dist/assets/tableLight.svg)' : 'url(./dist/assets/tableDark.svg)';
+    themeBtn.style.background = icon;
+    tableItem.style.background = table;
     Object.entries(themes[theme]).forEach(([key, value]) => {
         root.style.setProperty(key, value);
     })
@@ -41,11 +46,12 @@ function themeHadler(e) {
     e.preventDefault();
     isDarkTheme = !isDarkTheme;
     localStorage.setItem('isDarkTheme', isDarkTheme);
+    
     console.log(isDarkTheme);
     changeTheme(isDarkTheme);
 }
 
-theme.addEventListener(('click'), (themeHadler));
+themeBtn.addEventListener(('click'), (themeHadler));
 
 
 

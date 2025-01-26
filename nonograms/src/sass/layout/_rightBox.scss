@@ -13,8 +13,10 @@
 
 .theme {
     background: url(../assets/images/moon.svg);
-    width: 26px;
-    height: 26px;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 30px;
+    height: 30px;
     transition: all 200ms ease-in-out;
 
     &:hover {
@@ -25,7 +27,7 @@
 }
 
 .table {
-    background: url(../assets/images/table.svg);
+    background: url(../assets/images/tableDark.svg);
     width: 26px;
     height: 26px;
     transition: all 200ms ease-in-out;
