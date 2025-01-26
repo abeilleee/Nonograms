@@ -138,7 +138,7 @@ export class GameField {
                             timer.start();
                         }
                     }
-                    solution.checkSolution();
+                    solution.checkSolution(puzzle);
                     
                 });
 
