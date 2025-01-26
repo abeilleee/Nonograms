@@ -8,6 +8,7 @@ export class Timer {
         this.seconds = 0;
         this.interval;
         this.currentTime;
+        this.currentTimeSeconds;
         this.timerOn = false;
     }
 
@@ -24,7 +25,8 @@ export class Timer {
                 this.seconds = 0;
             }
             this.initTimer(); 
-            this.currentTime = (this.timer.textContent);
+            this.currentTime = this.timer.textContent;
+            this.currentTimeSeconds = `${this.minutes*60 +this.seconds }`;
         }, 1000);        
     }  
 
@@ -37,6 +39,10 @@ export class Timer {
 
     getCurrentTime() {
         return this.currentTime;
+    }
+
+    getCurrentTimeSeconds() {
+        return this.currentTimeSeconds;
     }
 }
 

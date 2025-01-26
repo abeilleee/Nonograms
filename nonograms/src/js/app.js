@@ -6,6 +6,7 @@ import { TemplateList } from "./templatesList";
 import { Levels } from "./levels";
 import { RandomGame } from "./randomGameBtn";
 import { Solution } from "./solution";
+import { ModalWindow } from "./modalWindow";
 
 
 export const timer = new Timer();
@@ -44,5 +45,8 @@ buttons.resetBtn.addEventListener(('click'), (buttons.reset));
 
 //solution
 export let solution = new Solution();
+
+//
+export const modal = new ModalWindow();
 
 
