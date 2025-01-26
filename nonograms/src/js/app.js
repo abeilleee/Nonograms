@@ -19,6 +19,20 @@ levels.levelsBox.addEventListener(('click'), (event) => {
     levels.selectLevel(target);
 });
 
+//buttons
+export const buttons = new Buttons();
+buttons.resetBtn.addEventListener(('click'),(event) => {
+    buttons.reset();
+    buttons.solutionBtn.classList.remove('selected');
+    buttons.saveGameBtn.classList.remove('disabledBtn');
+    buttons.continueBtn.classList.remove('disabledBtn');
+    gameField.field.classList.remove('disabled');
+});
+buttons.solutionBtn.addEventListener(('click'), (event) => {
+    let target = event.target;
+    buttons.showSolution(target);
+});
+
 //choose template
 export let template = new TemplateList();
 template.fillList('easy');
@@ -37,17 +51,7 @@ gameField.createLeftClues(puzzle);
 gameField.createFieldGame(puzzle);
 gameField.fillClues(puzzle);
 
-//buttons
-export const buttons = new Buttons();
-buttons.resetBtn.addEventListener(('click'),(event) => {
-    buttons.reset();
-    buttons.solutionBtn.classList.remove('selected');
-    gameField.field.classList.remove('disabled');
-});
-buttons.solutionBtn.addEventListener(('click'), (event) => {
-    let target = event.target;
-    buttons.showSolution(target);
-});
+
 
 //modal
 export const modal = new ModalWindow();

@@ -5,6 +5,7 @@ import { nonograms } from "./nonograms";
 import { Buttons } from "./buttons";
 import { removeChildren } from "./removeChildrenFunction";
 import { checkSolution } from "./checkSolution";
+import { buttons } from "./app";
 
 import { levels } from "./app";
 
@@ -74,6 +75,7 @@ export class GameField {
         let rowId = 0;
         let cellId = 0;
         removeChildren(this.fieldGame);
+        buttons.removeDisabled();
 
         for (let i = 0; i < width; i++) {
             let row = (createElement({ tag: 'div', classes: ['row'] }));

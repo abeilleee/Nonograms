@@ -8,7 +8,7 @@ import { gameField } from "./app";
 
 export class Buttons {
     constructor() {
-        this.buttonsBox = createElement({ tag: 'div', parent: wrapper, classes: ['btn__box'] });
+        this.buttonsBox = createElement({ tag: 'div', parent: wrapper, classes: ['btn__box', 'last'] });
         this.resetBtn = createElement({ tag: 'button', text: 'Reset', parent: this.buttonsBox, classes: ['btn'] });
         this.saveGameBtn = createElement({ tag: 'button', text: 'Save game', parent: this.buttonsBox, classes: ['btn'] });
         this.continueBtn = createElement({ tag: 'button', text: 'Continue last game', parent: this.buttonsBox, classes: ['btn'] });
@@ -46,6 +46,13 @@ export class Buttons {
                 }
             }
         }
+    }
+
+    removeDisabled() {
+        this.resetBtn.classList.remove('disabledBtn');
+        this.saveGameBtn.classList.remove('disabledBtn');
+        this.continueBtn.classList.remove('disabledBtn');
+        this.solutionBtn.classList.remove('disabledBtn');
     }
 
 
