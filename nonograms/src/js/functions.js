@@ -6,14 +6,12 @@ export const getRandomNumber = (array) => {
     return randomIdx;
 }
 
-export const checkArrays = (arrSolution, arrUser, result) => {
-    for (let i = 0; i < arrSolution.length; i++) {
-        if (arrSolution[i] === arrUser[i]) {
-            result = true;
-        } else {
-            result = false;
+export const checkArrays = (solution, userSolution) => {
+    for (let i = 0; i < solution.length; i++) {
+        if (solution[i] !== userSolution[i]) {
+            return false;
         }
     }
-    return result;
+    return true;
 }
 
