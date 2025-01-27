@@ -3,7 +3,7 @@ import { wrapper } from "./createElements";
 import { timer } from "./app";
 import { nonograms } from "./nonograms";
 import { Buttons } from "./buttons";
-import { removeChildren } from "./removeChildrenFunction";
+import { removeChildren } from "./functions";
 import { checkSolution } from "./checkSolution";
 import { buttons } from "./app";
 import { levels } from "./app";

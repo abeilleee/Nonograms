@@ -15,3 +15,9 @@ export const checkArrays = (solution, userSolution) => {
     return true;
 }
 
+export const removeChildren = (container) => {
+    while (container.firstChild) {
+        container.removeChild(container.firstChild);
+    }
+}
+
