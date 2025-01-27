@@ -1,3 +1,5 @@
+
+
 export let clickSound = () => {
     const clickSound = new Audio();
     clickSound.src = 'assets/audio/click.mp3';
@@ -17,4 +19,15 @@ export let crossSound = () => {
     crossSound.play();
 }
 
+export const winSound = new Audio();
+winSound.src = 'assets/audio/win.mp3';
+
+export let soundOn = (sound) => {
+    sound.play();
+}
+
+export let soundOff = (sound) => {
+    sound.pause();
+    sound.currentTime = 0;    
+}
 

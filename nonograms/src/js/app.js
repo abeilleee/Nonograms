@@ -53,8 +53,9 @@ gameField.createLeftClues(puzzle);
 gameField.createFieldGame(puzzle);
 gameField.fillClues(puzzle);
 
-
-
 //modal
 export const modal = new ModalWindow();
+modal.modalCloseBtn.addEventListener(('click'), (event) => {
+    modal.closeModal();
+});
 

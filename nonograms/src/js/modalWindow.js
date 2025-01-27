@@ -1,6 +1,8 @@
 import { createElement } from "./createElementFunction";
 import { buttons } from "./app";
 import { timer } from "./app";
+import { soundOn, soundOff } from "./audio";
+import { winSound } from "./audio";
 
 export class ModalWindow {
     constructor() {
@@ -17,24 +19,21 @@ export class ModalWindow {
         document.body.classList.add('hidden');
         this.modalWrapper.classList.add('open');
         timer.stop();
+        soundOn(winSound);
         let currentTimeSeconds = timer.getCurrentTimeSeconds();
         this.modalContent.textContent = `Great! You have solved the nonogram in ${currentTimeSeconds} seconds!`
-        this.modalCloseBtn.addEventListener(('click'), (event) => {
-            document.body.classList.remove('hidden');
-            this.modalWrapper.classList.remove('open');
-        });
+
         buttons.saveGameBtn.classList.add('disabledBtn');
         buttons.continueBtn.classList.add('disabledBtn');
         buttons.solutionBtn.classList.add('disabledBtn');
         document.querySelector('.field').classList.add('disabled');
+
     }
 
     closeModal() {
-        document.body.classList.add('hidden');
+        document.body.classList.remove('hidden');
         this.modalWrapper.classList.remove('open');
-        this.modalCloseBtn.addEventListener(('click'), (event) => {
-            document.body.classList.remove('hidden');
-            this.modalWrapper.classList.remove('open');
-        });
+        soundOff(winSound);
     }
 }
+
