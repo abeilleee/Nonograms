@@ -39,16 +39,18 @@ function changeTheme() {
     const table = isDarkTheme ? 'url(./dist/assets/images/tableLight.svg)' : 'url(./dist/assets/images/tableDark.svg)';
     themeBtn.style.background = icon;
     tableItem.style.background = table;
+    
     Object.entries(themes[theme]).forEach(([key, value]) => {
         root.style.setProperty(key, value);
     })
 }
 
+
 function themeHadler(e) {
     e.preventDefault();
     isDarkTheme = !isDarkTheme;
     localStorage.setItem('isDarkTheme', isDarkTheme);
-    
+
     console.log(isDarkTheme);
     changeTheme(isDarkTheme);
 }

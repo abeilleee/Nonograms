@@ -6,8 +6,8 @@ import { Buttons } from "./buttons";
 import { removeChildren } from "./removeChildrenFunction";
 import { checkSolution } from "./checkSolution";
 import { buttons } from "./app";
-import { clickSound } from "./audio";
 import { levels } from "./app";
+import { clickSound, eraseSound, crossSound } from "./audio";
 
 export class GameField {
     
@@ -104,8 +104,7 @@ export class GameField {
                         }
                     }
                     checkSolution(puzzle);
-                    clickSound.play();
-                    console.log(clickSound)
+                    cell.classList.contains('cell--clicked') ? clickSound() : eraseSound();
                 });
 
                 cell.addEventListener(('contextmenu'), (event) => {
@@ -118,7 +117,8 @@ export class GameField {
                             timer.start();
                         }
                     }
-                })
+                    cell.classList.contains('cell--crossed') ? crossSound() : eraseSound();                
+                });
 
             }
             rowId++;
