@@ -35,8 +35,8 @@ if (!localStorage.getItem('isDarkTheme')) {
 
 function changeTheme() {
     const theme = isDarkTheme ? 'dark' : 'default';
-    const icon = isDarkTheme ? 'url(./dist/assets/images/sun.svg)' : 'url(./dist/assets/images/moon.svg)';
-    const table = isDarkTheme ? 'url(./dist/assets/images/tableLight.svg)' : 'url(./dist/assets/images/tableDark.svg)';
+    const icon = isDarkTheme ? 'url(assets/images/sun.svg)' : 'url(assets/images/moon.svg)';
+    const table = isDarkTheme ? 'url(assets/images/tableLight.svg)' : 'url(assets/images/tableDark.svg)';
     themeBtn.style.background = icon;
     tableItem.style.background = table;
     
