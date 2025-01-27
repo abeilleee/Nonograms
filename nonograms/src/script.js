@@ -1,3 +1,5 @@
+require.context('./assets/images', true);
+require.context('./assets/audio', true);
 import './js/app';
 import './js/createElementFunction';
 import './js/createElements';
@@ -12,7 +14,5 @@ import './js/modalWindow';
 import './js/functions';
 import './js/checkSolution';
 import './js/theme';
+import './js/audio';
 import './sass/style.scss';
-
-
-

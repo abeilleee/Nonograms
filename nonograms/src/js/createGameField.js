@@ -6,7 +6,7 @@ import { Buttons } from "./buttons";
 import { removeChildren } from "./removeChildrenFunction";
 import { checkSolution } from "./checkSolution";
 import { buttons } from "./app";
-
+import { clickSound } from "./audio";
 import { levels } from "./app";
 
 export class GameField {
@@ -104,6 +104,8 @@ export class GameField {
                         }
                     }
                     checkSolution(puzzle);
+                    clickSound.play();
+                    console.log(clickSound)
                 });
 
                 cell.addEventListener(('contextmenu'), (event) => {

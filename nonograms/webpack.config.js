@@ -7,7 +7,7 @@ module.exports = {
     output: {
         path: path.resolve(__dirname, 'dist'),
         filename: 'bundle.js',
-        assetModuleFilename: 'assets/[name][ext]',
+        assetModuleFilename: 'assets/images/[name][ext]',
     },
     mode: 'development',
     optimization: {
@@ -19,13 +19,20 @@ module.exports = {
     module: {
         rules: [
             {
-                test: /\.(?:ico|gif|png|jpg|jpeg|svg)$/i,
+                test: /\.(png|jpg|jpeg|gif|svg)$/i,
                 type: 'asset/resource',
             },
             {
                 test: /\.(scss|css)$/,
                 use: [MiniCssExtractPlugin.loader, 'css-loader', 'postcss-loader', 'sass-loader'], //add first 'style-loader' to not separate css file after build
-            }
+            },
+            {
+                test: /\.(mp3|ogg)$/i,
+                type: 'asset/resource',
+                generator: {
+                    filename: 'assets/audio/[name][ext]',
+                }
+            },
         ],
     },
     resolve: {
