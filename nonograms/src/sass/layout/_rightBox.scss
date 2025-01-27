@@ -21,15 +21,14 @@
 
     &:hover {
         cursor: pointer;
-        box-shadow: rgba(0, 0, 0, .3) 2px 8px 8px -5px;
         transform: translate3d(0, 2px, 0);
     }
 }
 
 .table {
     background: url(../assets/images/tableDark.svg);
-    width: 26px;
-    height: 26px;
+    width: 30px;
+    height: 30px;
     transition: var(--transition);
 
     &:hover {
