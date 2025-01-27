@@ -1,5 +1,6 @@
 const { extension } = require('mime-types');
 const path = require('path');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 module.exports = {
@@ -9,12 +10,18 @@ module.exports = {
         filename: 'bundle.js',
         assetModuleFilename: 'assets/images/[name][ext]',
     },
+    stats: {
+        children: true
+    },
     mode: 'development',
     optimization: {
         minimize: false
     },
     plugins: [new MiniCssExtractPlugin({
         filename: '[name].css',
+    }),
+    new HtmlWebpackPlugin({
+        template: './index.html',
     })],
     module: {
         rules: [
