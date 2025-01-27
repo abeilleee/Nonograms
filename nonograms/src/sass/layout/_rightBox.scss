@@ -19,9 +19,11 @@
     height: 30px;
     transition: var(--transition);
 
-    &:hover {
-        cursor: pointer;
-        transform: translate3d(0, 2px, 0);
+    @media (hover:hover) and (pointer:fine) {
+        &:hover {
+            cursor: pointer;
+            transform: translate3d(0, 2px, 0);
+        }
     }
 }
 
@@ -31,24 +33,28 @@
     height: 30px;
     transition: var(--transition);
 
-    &:hover {
-        cursor: pointer;
-        transform: translate3d(0, 2px, 0);
+    @media (hover:hover) and (pointer:fine) {
+        &:hover {
+            cursor: pointer;
+            transform: translate3d(0, 2px, 0);
+        }
     }
 }
 
-.sound{
+.sound {
     background: url(../assets/images/soundOnDark.svg);
     width: 30px;
     height: 30px;
     transition: var(--transition);
 
-    &-off{
+    &-off {
         background: url(../assets/images/soundOffDark.svg);
     }
 
-    &:hover {
-        cursor: pointer;
-        transform: translate3d(0, 2px, 0);
+    @media (hover:hover) and (pointer:fine) {
+        &:hover {
+            cursor: pointer;
+            transform: translate3d(0, 2px, 0);
+        }
     }
 }

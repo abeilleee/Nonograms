@@ -19,7 +19,7 @@
     }
 }
 
-.disabled{
+.disabled {
     pointer-events: none;
 }
 
@@ -63,8 +63,10 @@
         background-size: contain;
     }
 
-    &:hover {
-        cursor: pointer;
+    @media (hover:hover) and (pointer:fine) {
+        &:hover {
+            cursor: pointer;
+        }
     }
 }
 

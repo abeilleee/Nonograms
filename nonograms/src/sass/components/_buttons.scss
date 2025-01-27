@@ -23,16 +23,18 @@
         gap: 10px;
     }
 
-    &:hover {
-        cursor: pointer;
-        box-shadow: rgba(0, 0, 0, .3) 2px 8px 8px -5px;
-        transform: translate3d(0, 2px, 0);
+    @media (hover:hover) and (pointer:fine) {
+        &:hover {
+            cursor: pointer;
+            box-shadow: rgba(0, 0, 0, .3) 2px 8px 8px -5px;
+            transform: translate3d(0, 2px, 0);
+        }
     }
 }
 
 .disabledBtn {
     pointer-events: none;
-    color:rgb(166, 166, 166);
+    color: rgb(166, 166, 166);
 }
 
 .last {

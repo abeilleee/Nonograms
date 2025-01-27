@@ -44,10 +44,12 @@
     border-top-left-radius: 255px 15px;
     border-top-right-radius: 15px 225px;
 
-    &:hover {
-        cursor: pointer;
-        box-shadow: rgba(0, 0, 0, .3) 2px 8px 8px -5px;
-        transform: translate3d(0, 2px, 0);
+    @media (hover:hover) and (pointer:fine) {
+        &:hover {
+            cursor: pointer;
+            box-shadow: rgba(0, 0, 0, .3) 2px 8px 8px -5px;
+            transform: translate3d(0, 2px, 0);
+        }
     }
 }
 
@@ -62,8 +64,8 @@
     @include flex-center;
     gap: 10px;
 
-    &__label{
-        transition:var(--transition);
+    &__label {
+        transition: var(--transition);
     }
 
     &__select {
@@ -79,8 +81,10 @@
         background-color: var(--btn-bg-color);
         transition: var(--transition);
 
-        &:hover {
-            cursor: pointer;
+        @media (hover:hover) and (pointer:fine) {
+            &:hover {
+                cursor: pointer;
+            }
         }
     }
 
