@@ -1,4 +1,6 @@
 import { themeBtn } from "./createElements";
+import { soundBtn } from "./createElements";
+import { sounds } from "./app";
 
 let root = document.querySelector(':root');
 let tableItem = document.querySelector('.table');
@@ -26,35 +28,41 @@ const themes = {
     }
 }
 
-let isDarkTheme = JSON.parse(localStorage.getItem('isDarkTheme'));
-changeTheme(isDarkTheme);
+export let isDarkTheme = JSON.parse(localStorage.getItem('isDarkTheme'));
 
 if (!localStorage.getItem('isDarkTheme')) {
     localStorage.setItem('isDarkTheme', false);
 }
 
-function changeTheme() {
+const changeTheme = () => {
     const theme = isDarkTheme ? 'dark' : 'default';
     const icon = isDarkTheme ? 'url(assets/images/sun.svg)' : 'url(assets/images/moon.svg)';
     const table = isDarkTheme ? 'url(assets/images/tableLight.svg)' : 'url(assets/images/tableDark.svg)';
     themeBtn.style.background = icon;
     tableItem.style.background = table;
-    
+
     Object.entries(themes[theme]).forEach(([key, value]) => {
         root.style.setProperty(key, value);
-    })
+    });
 }
 
-
-function themeHadler(e) {
-    e.preventDefault();
+const themeHadler = (event) => {
+    event.preventDefault();
     isDarkTheme = !isDarkTheme;
     localStorage.setItem('isDarkTheme', isDarkTheme);
 
     console.log(isDarkTheme);
     changeTheme(isDarkTheme);
+    changeColorSoundSwitcher();
 }
 
+export const changeColorSoundSwitcher = () => {
+    const soundColorOn = isDarkTheme ? 'url(assets/images/soundOnLight.svg)' : 'url(assets/images/soundOnDark.svg)';
+    const soundColorOff = isDarkTheme ? 'url(assets/images/soundOffLight.svg)' : 'url(assets/images/soundOffDark.svg)';
+    sounds.soundSwitch ? soundBtn.style.background = soundColorOn : soundBtn.style.background = soundColorOff;
+}
+
+changeTheme(isDarkTheme);
 themeBtn.addEventListener(('click'), (themeHadler));
 
 

@@ -36,3 +36,19 @@
         transform: translate3d(0, 2px, 0);
     }
 }
+
+.sound{
+    background: url(../assets/images/soundOnDark.svg);
+    width: 30px;
+    height: 30px;
+    transition: var(--transition);
+
+    &-off{
+        background: url(../assets/images/soundOffDark.svg);
+    }
+
+    &:hover {
+        cursor: pointer;
+        transform: translate3d(0, 2px, 0);
+    }
+}

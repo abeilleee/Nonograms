@@ -7,10 +7,10 @@ import { removeChildren } from "./removeChildrenFunction";
 import { checkSolution } from "./checkSolution";
 import { buttons } from "./app";
 import { levels } from "./app";
-import { clickSound, eraseSound, crossSound } from "./audio";
+import { sounds } from "./app";
 
 export class GameField {
-    
+
     constructor() {
         this.field = createElement({ tag: 'div', parent: wrapper, classes: ['field'] });
         this.leftClues = createElement({ tag: 'div', parent: this.field, classes: ['clues', 'clues-left'] });
@@ -69,7 +69,7 @@ export class GameField {
             clueRowId++;
             clueId = 0;
         }
-    }   
+    }
 
     createFieldGame(puzzle) {
         this.currentGameId = arguments[0].id;
@@ -104,7 +104,7 @@ export class GameField {
                         }
                     }
                     checkSolution(puzzle);
-                    cell.classList.contains('cell--clicked') ? clickSound() : eraseSound();
+                    cell.classList.contains('cell--clicked') ? sounds.playClick() : sounds.playErase();
                 });
 
                 cell.addEventListener(('contextmenu'), (event) => {
@@ -117,7 +117,7 @@ export class GameField {
                             timer.start();
                         }
                     }
-                    cell.classList.contains('cell--crossed') ? crossSound() : eraseSound();                
+                    cell.classList.contains('cell--crossed') ? sounds.playCross() : sounds.playErase();
                 });
 
             }
@@ -151,28 +151,7 @@ export class GameField {
         cells.forEach((elem) => elem.classList.remove('cell--clicked'));
         cells.forEach((elem) => elem.classList.remove('cell--crossed'));
     }
-
 }
 
-
-
-
-
-// export let createGameField = () => {
-//     let gameField = createElement({ tag: 'div', parent: wrapper, classes: ['field'] });
-//     let leftClues = createElement({ tag: 'div', parent: gameField, classes: ['field__clues', 'field__clues--left'] });
-//     let topClues = createElement({ tag: 'div', parent: gameField, classes: ['field__clues', 'field__clues--top'] });
-//     let cellsGrid = createElement({ tag: 'div', parent: gameField, classes: ['field__cells'] });
-
-//     // if (level === 'easy') {
-//     //     gameField.classList.add('easyGame');
-//     //     for (let i = 0; i < 25; i++) {
-//     //         let div = createElement({ tag: 'div', parent: cellsGrid, classes: ['cell'] });
-//     //         cellsGrid.appendChild(div);
-//     //     }
-//     // }
-// }
-
-// createGameField();
 
 
