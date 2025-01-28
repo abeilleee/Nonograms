@@ -38,4 +38,5 @@ export class Sounds {
         this.winSound.pause();
         this.winSound.currentTime = 0;
     }
+
 }
