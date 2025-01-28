@@ -8,6 +8,12 @@
         width: 100%;
         gap: 15px;
         justify-content: flex-end;
+
+        @media screen and (max-width: 470px) {
+            & {
+                gap: 8px;
+            }
+        }
     }
 }
 

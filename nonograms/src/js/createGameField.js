@@ -89,7 +89,7 @@ export class GameField {
             for (let j = 0; j < height; j++) {
                 let cell = createElement({ tag: 'div', classes: ['cell'] });
                 if (width === 5) {
-                    cell.classList.add('clue--size60');
+                    cell.classList.add('cell--size60');
                 }
                 cell.setAttribute('id', `${rowId}-${cellId}`);
                 row.appendChild(cell);
