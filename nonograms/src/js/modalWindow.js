@@ -14,18 +14,17 @@ export class ModalWindow {
         this.modalCloseBtn = createElement({ tag: 'button', text: 'Close', parent: this.modal, classes: ['modal__btn', 'btn'] });
     }
 
-    viewModal() {
-        document.body.classList.add('hidden');
-        this.modalWrapper.classList.add('open');
-        timer.stop();
-        sounds.playWin();
-        let currentTimeSeconds = timer.getCurrentTimeSeconds();
-        this.modalContent.textContent = `Great! You have solved the nonogram in ${currentTimeSeconds} seconds!`
-
-        buttons.saveGameBtn.classList.add('disabledBtn');
-        buttons.continueBtn.classList.add('disabledBtn');
-        buttons.solutionBtn.classList.add('disabledBtn');
-        document.querySelector('.field').classList.add('disabled');
+    viewModal() {   
+            document.body.classList.add('hidden');
+            this.modalWrapper.classList.add('open');
+            timer.stop();
+            sounds.playWin();
+            let currentTimeSeconds = timer.getCurrentTimeSeconds();
+            this.modalContent.textContent = `Great! You have solved the nonogram in ${currentTimeSeconds} seconds!`    
+            buttons.saveGameBtn.classList.add('disabledBtn');
+            buttons.continueBtn.classList.add('disabledBtn');
+            buttons.solutionBtn.classList.add('disabledBtn');
+            document.querySelector('.field').classList.add('disabled');
     }
 
     closeModal() {

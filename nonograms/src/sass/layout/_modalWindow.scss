@@ -1,3 +1,14 @@
+@keyframes animate {
+    from {
+        opacity: 0
+    }
+
+    to {
+        top: 0;
+        opacity: 1
+    }
+}
+
 .modal {
     @include flex-center;
     flex-direction: column;
@@ -15,6 +26,8 @@
     gap: 15px;
     padding: 8px;
     margin: 8px;
+    animation: animate;
+    animation-duration: 0.5s;
 
     &__wrapper {
         display: none;
@@ -25,9 +38,11 @@
         left: 0;
         top: 0;
         z-index: 1;
+        animation: animate;
+        animation-duration: 0.5s;
     }
 
-    &__text{
+    &__text {
         text-align: center;
     }
 
@@ -36,6 +51,7 @@
     }
 }
 
-.open{
+.open {
     @include flex-center;
+    padding-right: 8px;
 }

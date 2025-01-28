@@ -14,4 +14,5 @@ import './js/sounds';
 import './js/functions';
 import './js/checkSolution';
 import './js/theme';
+import './js/score';
 import './sass/style.scss';
