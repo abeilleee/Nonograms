@@ -3,6 +3,7 @@ import { Timer } from "./timer";
 import { gameField, timer } from "./app";
 import { GameField } from "./createGameField";
 import { nonograms } from "./nonograms";
+import { results } from "./app";
 
 class Score {
     constructor() {
@@ -16,29 +17,27 @@ class Score {
         this.titleLevel = createElement({ tag: 'th', text: 'Level', parent: this.tableHeadRow, classes: ['score__table-title'] });
         this.titleTime = createElement({ tag: 'th', text: 'Time', parent: this.tableHeadRow, classes: ['score__table-title'] });
         this.tableBody = createElement({ tag: 'tbody', parent: this.scoreTable, classes: ['score__table-body'] });
-        this.tableRow = createElement({ tag: 'tr', parent: this.tableBody, classes: ['score__table-row'] });
-        this.tableCell = createElement({ tag: 'td', parent: this.tableRow, classes: ['score__table-cell'] });
-    }
-
-    saveResult() {
-        let id = gameField.currentGameId()
-        let template = nonograms[id].name;
-        let time = timer.getCurrentTime();
-        let level;
-        if (id >= 0 && id <= 4) {
-            level = 'Easy';
-        } else if (id >= 5 && id <= 9) {
-            level = 'Medium';
-        } else if (id >= 10 && id <= 14) {
-            level = 'Hard';
-        }
+        // this.tableRow = createElement({ tag: 'tr', parent: this.tableBody, classes: ['score__table-row'] });
+        // this.tableCell = createElement({ tag: 'td', parent: this.tableRow, classes: ['score__table-cell'] });
     }
 
     viewScore() {
         document.body.classList.add('hidden');
         this.scoreWrapper.classList.add('open');
+
+        let resultsObj = results.getResults();
+        for (let i = 0; i < resultsObj.length; i++) {
+            let tableRow = createElement({ tag: 'tr', classes: ['score__table-row'] });
+            this.tableBody.appendChild(tableRow);
+            tableRow.appendChild(createElement({ tag: 'td', text: i+1, classes: ['score__table-cell'] }));
+            tableRow.appendChild(createElement({ tag: 'td', text: `${resultsObj[i].template}`, classes: ['score__table-cell'] }));
+            tableRow.appendChild(createElement({ tag: 'td', text: `${resultsObj[i].level}`, classes: ['score__table-cell'] }));
+            tableRow.appendChild(createElement({ tag: 'td', text: `${resultsObj[i].time}`, classes: ['score__table-cell'] }));
+        }
+
     }
 }
 
 let scoreTable = new Score();
-scoreTable.scoreWrapper.classList.add('open');    
+// scoreTable.scoreWrapper.classList.add('open');    
+scoreTable.viewScore();
