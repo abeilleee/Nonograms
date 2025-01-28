@@ -1,6 +1,7 @@
 import { themeBtn } from "./createElements";
 import { soundBtn } from "./createElements";
 import { sounds } from "./app";
+import { soundSwitch } from "./app";
 
 let root = document.querySelector(':root');
 let tableItem = document.querySelector('.table');
@@ -59,7 +60,7 @@ const themeHadler = (event) => {
 export const changeColorSoundSwitcher = () => {
     const soundColorOn = isDarkTheme ? 'url(assets/images/soundOnLight.svg)' : 'url(assets/images/soundOnDark.svg)';
     const soundColorOff = isDarkTheme ? 'url(assets/images/soundOffLight.svg)' : 'url(assets/images/soundOffDark.svg)';
-    sounds.soundSwitch ? soundBtn.style.background = soundColorOn : soundBtn.style.background = soundColorOff;
+    soundSwitch ? soundBtn.style.background = soundColorOn : soundBtn.style.background = soundColorOff;
 }
 
 changeTheme(isDarkTheme);

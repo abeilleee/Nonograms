@@ -41,14 +41,19 @@ buttons.solutionBtn.addEventListener(('click'), (event) => {
 
 //sounds
 export const sounds = new Sounds();
+export let soundSwitch = JSON.parse(localStorage.getItem('soundSwitch'));
+if (!localStorage.getItem('soundSwitch')) {
+    localStorage.setItem('soundSwitch', false);
+}
 
 soundBtn.addEventListener(('click'), (event) => {
-    sounds.soundSwitch = !sounds.soundSwitch;
+    soundSwitch = !soundSwitch;
+    localStorage.setItem('soundSwitch', soundSwitch);
     const soundColorOn = isDarkTheme ? 'url(assets/images/soundOnLight.svg)' : 'url(assets/images/soundOnDark.svg)';
     const soundColorOff = isDarkTheme ? 'url(assets/images/soundOffLight.svg)' : 'url(assets/images/soundOffDark.svg)';
-    sounds.soundSwitch ? soundBtn.style.background = soundColorOn
+    soundSwitch ? soundBtn.style.background = soundColorOn
         : soundBtn.style.background = soundColorOff;
-    console.log('sound switch: '+sounds.soundSwitch);
+    console.log('sound switch: ' + !soundSwitch);
     console.log('isDarkTheme: ' + isDarkTheme);
 });
 

@@ -1,4 +1,5 @@
 import { clickSound, eraseSound, crossSound } from "./soundFunctions";
+import { soundSwitch } from "./app";
 
 export class Sounds {
 
@@ -11,25 +12,25 @@ export class Sounds {
     }
 
     playClick() {
-        if (this.soundSwitch) {
+        if (soundSwitch) {
             clickSound(this.clickSound);
         }
     }
 
     playErase() {
-        if (this.soundSwitch) {
+        if (soundSwitch) {
             eraseSound(this.eraseSound);
         }
     }
 
     playCross() {
-        if (this.soundSwitch) {
+        if (soundSwitch) {
             crossSound(this.crossSound);
         }
     }
 
     playWin() {
-        if (this.soundSwitch) {
+        if (soundSwitch) {
             this.winSound.play();
         }
     }
@@ -38,5 +39,4 @@ export class Sounds {
         this.winSound.pause();
         this.winSound.currentTime = 0;
     }
-
 }
