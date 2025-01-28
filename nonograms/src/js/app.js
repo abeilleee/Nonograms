@@ -10,6 +10,7 @@ import { Sounds } from "./sounds";
 import { soundBtn } from "./createElements";
 import { isDarkTheme } from "./theme";
 import { changeColorSoundSwitcher } from "./theme";
+import { Result } from "./results";
 
 export const timer = new Timer();
 timer.initTimer();
@@ -82,3 +83,10 @@ modal.modalCloseBtn.addEventListener(('click'), (event) => {
 });
 
 changeColorSoundSwitcher();
+
+
+//results
+export let results = new Result();
+
+let resultsList = results.getResults();
+console.log(resultsList);

@@ -27,7 +27,7 @@ export class Timer {
             }
             this.initTimer(); 
             this.currentTime = this.timer.textContent;
-            this.currentTimeSeconds = `${this.minutes*60 +this.seconds }`;
+            this.currentTimeSeconds = +`${this.minutes*60 +this.seconds }`;
         }, 1000);   
     }  
 
