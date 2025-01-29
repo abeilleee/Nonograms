@@ -5,7 +5,7 @@ import { nonograms } from "./nonograms";
 
 export class Result {
     constructor() {
-
+        this.resultsArr;
     }
 
     saveResult() {
@@ -18,22 +18,23 @@ export class Result {
         };
 
         const emptyResultsArr = [];
-        let resultsArr = JSON.parse(localStorage.getItem('Results')) || emptyResultsArr;
-        resultsArr.push(results);
-        if (resultsArr.length > 5) {
-            resultsArr.shift();
+        this.resultsArr = JSON.parse(localStorage.getItem('Results')) || emptyResultsArr;
+        this.resultsArr.push(results);
+        if (this.resultsArr.length > 5) {
+            this.resultsArr.shift();
         }
-        localStorage.setItem('Results', JSON.stringify(resultsArr));
+        localStorage.setItem('Results', JSON.stringify(this.resultsArr));
     }
 
     getResults() {
-        const lastResults = JSON.parse(localStorage.getItem('Results'));
+        const emptyResultsArr = [];
+        const lastResults = JSON.parse(localStorage.getItem('Results'))  || emptyResultsArr;
         const sortedResults = lastResults.sort((obj1, obj2) => obj1.seconds > obj2.seconds ? 1 : -1);
         return sortedResults;
     }
 
     getLastGame() {
-        
+
     }
 
 

@@ -35,16 +35,7 @@ export class Score {
             tableRow.appendChild(createElement({ tag: 'td', text: `${resultsObj[i].template}`, classes: ['score__table-cell'] }));
             tableRow.appendChild(createElement({ tag: 'td', text: `${resultsObj[i].level}`, classes: ['score__table-cell'] }));
             tableRow.appendChild(createElement({ tag: 'td', text: `${resultsObj[i].time}`, classes: ['score__table-cell'] }));
-
-            this.closeTableBtn.addEventListener(('click'), (event) => {
-                document.body.classList.remove('hidden');
-                this.scoreWrapper.classList.remove('open'); 
-            })
         }
 
     }
 }
-
-
-// scoreTable.scoreWrapper.classList.add('open');    
-// scoreTable.viewScore();

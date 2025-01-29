@@ -95,5 +95,11 @@ console.log(resultsList);
 //score btn
 let scoreTable = new Score();
 table.addEventListener(('click'), (event) => {
-    scoreTable.viewScore();
+    results.getResults();
+    scoreTable.viewScore();    
 })
+scoreTable.closeTableBtn.addEventListener(('click'), (event) => {
+    document.body.classList.remove('hidden');
+    scoreTable.scoreWrapper.classList.remove('open'); 
+    console.log('hi')
+});
