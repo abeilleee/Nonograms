@@ -27,9 +27,9 @@ levels.levelsBox.addEventListener(('click'), (event) => {
 export const buttons = new Buttons();
 buttons.resetBtn.addEventListener(('click'), (event) => {
     buttons.reset();
+    buttons.saveGameBtn.classList.add('disabledBtn');
     buttons.solutionBtn.classList.remove('selected');
     buttons.solutionBtn.classList.remove('disabledBtn');
-    buttons.saveGameBtn.classList.remove('disabledBtn');
     buttons.continueBtn.classList.remove('disabledBtn');
     gameField.field.classList.remove('disabled');
 });
@@ -103,3 +103,10 @@ scoreTable.closeTableBtn.addEventListener(('click'), (event) => {
     scoreTable.scoreWrapper.classList.remove('open'); 
     console.log('hi')
 });
+
+//save game
+const saveGameBtn = buttons.saveGameBtn;
+
+saveGameBtn.addEventListener(('click'), (event) => {
+    results.saveGame();
+})

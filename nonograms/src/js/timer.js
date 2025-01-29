@@ -1,6 +1,7 @@
 import { createElement } from "./createElementFunction";
 import { timerBox } from "./createElements";
 import { levels } from "./app";
+import { buttons } from "./app";
 
 export class Timer {
     constructor() {
@@ -18,6 +19,7 @@ export class Timer {
     }
 
     start() {      
+        buttons.saveGameBtn.classList.remove('disabledBtn');
         this.timerOn = true;
         this.interval = setInterval(() => {
             this.seconds++;     
@@ -36,6 +38,7 @@ export class Timer {
         this.timerOn = false;     
         this.minutes = 0;
         this.seconds = 0;   
+        buttons.saveGameBtn.classList.add('disabledBtn');
     }
 
     getCurrentTime() {

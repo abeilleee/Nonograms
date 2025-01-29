@@ -10,13 +10,15 @@ export class Buttons {
     constructor() {
         this.buttonsBox = createElement({ tag: 'div', parent: wrapper, classes: ['btn__box', 'last'] });
         this.resetBtn = createElement({ tag: 'button', text: 'Reset', parent: this.buttonsBox, classes: ['btn'] });
-        this.saveGameBtn = createElement({ tag: 'button', text: 'Save game', parent: this.buttonsBox, classes: ['btn'] });
+        this.saveGameBtn = createElement({
+            tag: 'button', text: 'Save game', parent: this.buttonsBox,
+            classes: ['btn', 'disabledBtn']});
         this.continueBtn = createElement({ tag: 'button', text: 'Continue last game', parent: this.buttonsBox, classes: ['btn'] });
         this.solutionBtn = createElement({ tag: 'button', text: 'Solution', parent: this.buttonsBox, classes: ['btn'] });
     }
 
     reset() {
-        timer.stop();
+        timer.stop();   
         timer.initTimer();
         let clickedCells = document.querySelectorAll('.cell--clicked');
         let crossedCells = document.querySelectorAll('.cell--crossed');
@@ -30,7 +32,7 @@ export class Buttons {
 
     showSolution(target) {
         let currentGameId = gameField.currentGameId;
-        console.log('currenGameID solution: '+ currentGameId);
+        console.log('currenGameID solution: ' + currentGameId);
         gameField.cleanField();
         if ((target) === this.solutionBtn) {
             this.solutionBtn.classList.add('selected');
@@ -52,7 +54,7 @@ export class Buttons {
 
     removeDisabled() {
         this.resetBtn.classList.remove('disabledBtn');
-        this.saveGameBtn.classList.remove('disabledBtn');
+        // this.saveGameBtn.classList.remove('disabledBtn');
         this.continueBtn.classList.remove('disabledBtn');
         this.solutionBtn.classList.remove('disabledBtn');
     }
