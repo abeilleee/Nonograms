@@ -7,10 +7,11 @@ import { Levels } from "./levels";
 import { RandomGame } from "./randomGameBtn";
 import { ModalWindow } from "./modalWindow";
 import { Sounds } from "./sounds";
-import { soundBtn } from "./createElements";
+import { soundBtn, table } from "./createElements";
 import { isDarkTheme } from "./theme";
 import { changeColorSoundSwitcher } from "./theme";
 import { Result } from "./results";
+import { Score } from "./score";
 
 export const timer = new Timer();
 timer.initTimer();
@@ -90,3 +91,9 @@ export let results = new Result();
 
 let resultsList = results.getResults();
 console.log(resultsList);
+
+//score btn
+let scoreTable = new Score();
+table.addEventListener(('click'), (event) => {
+    scoreTable.viewScore();
+})
