@@ -1,11 +1,8 @@
 import { createElement } from "./createElementFunction";
-import { wrapper } from "./createElements";
 import { levelsWrapper } from "./createElements";
 import { template } from "./app";
-import { GameField } from "./createGameField";
 import { gameField } from "./app";
 import { nonograms } from "./nonograms";
-import { upperBox } from "./createElements";
 import { timer } from "./app";
 
 export class Levels {

@@ -70,7 +70,3 @@ export class Result {
         }, 500)
     }
 }
-
-let filledCells = document.querySelectorAll('.cell--clicked');
-filledCells.forEach((elem) =>
-    console.log(elem.getAttribute('id')))

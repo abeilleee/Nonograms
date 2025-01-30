@@ -15,7 +15,6 @@ export let checkSolution = (puzzle) => {
         elem.classList.contains('cell--clicked') ? userSolution.push(1) : userSolution.push(0);
     });
 
-    //если количество закрашенных ячеек равно количеству 'единиц в решении'
     if (cellsFilled.length === filledCellsAmount) {
         result = checkArrays(solution, userSolution);
         if (result === true) {

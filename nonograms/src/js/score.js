@@ -1,8 +1,4 @@
 import { createElement } from "./createElementFunction";
-import { Timer } from "./timer";
-import { gameField, timer } from "./app";
-import { GameField } from "./createGameField";
-import { nonograms } from "./nonograms";
 import { results } from "./app";
 import { removeChildren } from "./functions";
 

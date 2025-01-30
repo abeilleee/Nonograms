@@ -5,8 +5,6 @@ import { nonograms } from "./nonograms";
 import { gameField, timer } from "./app";
 import { levels } from "./app";
 
-
-
 export class RandomGame {
     constructor() {
         this.randomGameBtn = createElement({ tag: 'button', text: 'Random game', parent: rightBox, classes: ['btn'] });

@@ -1,6 +1,5 @@
 import { createElement } from "./createElementFunction";
 import { timerBox } from "./createElements";
-import { levels } from "./app";
 import { buttons } from "./app";
 
 export class Timer {
@@ -55,48 +54,3 @@ export class Timer {
         return this.currentTimeSeconds;
     }
 }
-
-
-
-
-
-// let timer12 = new Timer();
-// timer12.start();
-// timer12.add();
-// timer12.timer();
-// // timer12.start();
-
-// // timer12.timer();
-
-// console.log(timer12)
-
-// const timer = createElement({ tag: 'div', parent: wrapper, classes: ['timer'] });
-// let hours = 0;
-// let minutes = 0;
-// let seconds = 0;
-// let interval;
-
-// function start() {
-//     seconds++;
-//     if (seconds >= 60) {
-//         seconds = 0;
-//         minutes++;
-        
-//     }
-// }
-
-// function add() {
-//     start();
-//     if (minutes === 59) {
-//         alert('Hey?! Are you here? Time is out!');
-//         minutes = 0;
-//     }
-//     timer.textContent = `${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
-//     timer1();
-// }
-
-// function timer1() {
-//     interval = setTimeout(add, 1000);
-// }
-
-// timer1();
