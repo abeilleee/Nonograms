@@ -42,7 +42,7 @@ buttons.solutionBtn.addEventListener(('click'), (event) => {
 });
 
 buttons.saveGameBtn.addEventListener(('click'), (event) => {
-    results.saveResult();
+    results.saveGame();
     buttons.saveGameBtn.classList.add('disabledBtn');
 });
 
@@ -111,10 +111,3 @@ scoreTable.closeTableBtn.addEventListener(('click'), (event) => {
     scoreTable.scoreWrapper.classList.remove('open');
     console.log('hi')
 });
-
-//save game
-const saveGameBtn = buttons.saveGameBtn;
-
-saveGameBtn.addEventListener(('click'), (event) => {
-    results.saveGame();
-})
