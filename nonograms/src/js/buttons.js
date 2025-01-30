@@ -55,7 +55,6 @@ export class Buttons {
 
     continueLastGame() {
         gameField.cleanField();
-
         const lastGameOptions = JSON.parse(localStorage.getItem('Saved Game'));       
         let currentGameId = lastGameOptions[0].id;
         let clickedCells = lastGameOptions[0].filledCells;
@@ -64,11 +63,13 @@ export class Buttons {
         let time = lastGameOptions[0].time;        
         let minutes = time.slice(0,2);
         let seconds = time.slice(3,5);
-        console.log(minutes)
-        console.log(seconds)
-
         levels.selectLevel(currentGameId);
-        timer.setTime(minutes, seconds)
+        timer.setTime(minutes, seconds);
+
+        gameField.createTopClues(nonograms[currentGameId]);
+        gameField.createLeftClues(nonograms[currentGameId]);
+        gameField.createFieldGame(nonograms[currentGameId]);
+        gameField.fillClues(nonograms[currentGameId]);
         
         this.continueBtn.classList.add('disabledBtn');
         for (let i = 0; i < clickedCells.length; i++) {
