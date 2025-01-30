@@ -49,13 +49,20 @@ export class Result {
     }
 
     saveGame() {
+        let clickedCells = document.querySelectorAll('.cell--clicked');
+        let crossedCells = document.querySelectorAll('.cell--crossed');
+        let clickedCellsIndexes = [];
+        let crossedCellsIndexes = [];
+        clickedCells.forEach((elem) => clickedCellsIndexes.push(elem.getAttribute('id')));
+        crossedCells.forEach((elem) => crossedCellsIndexes.push(elem.getAttribute('id')));
+
         const savedGameOptions = {
-            savedGameId: `${gameField.currentGameId}`,
+            id: `${gameField.currentGameId}`,
             template: `${nonograms[gameField.currentGameId].name}`,
             level: getLevelName(gameField.currentGameId),
             time: timer.getCurrentTime(),
-            filledCells: Array(document.querySelectorAll('.cell--clicked')),
-            crossedCells: Array(document.querySelectorAll('.cell--crossed')),
+            filledCells: clickedCellsIndexes,
+            crossedCells: crossedCellsIndexes,
         };
         localStorage.removeItem('Saved Game');
         const emptyArr = [];
@@ -63,7 +70,9 @@ export class Result {
         savedGame.push(savedGameOptions);
         localStorage.setItem('Saved Game', JSON.stringify(savedGame));
         savedGame = [];
-
-        console.log(document.querySelectorAll('.cell--clicked'))
     }
 }
+
+let filledCells = document.querySelectorAll('.cell--clicked');
+filledCells.forEach((elem) =>
+    console.log(elem.getAttribute('id')))

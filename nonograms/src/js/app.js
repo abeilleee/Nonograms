@@ -44,6 +44,11 @@ buttons.solutionBtn.addEventListener(('click'), (event) => {
 buttons.saveGameBtn.addEventListener(('click'), (event) => {
     results.saveResult();
     buttons.saveGameBtn.classList.add('disabledBtn');
+});
+
+buttons.continueBtn.addEventListener(('click'), (event) => {
+    console.log('hi')
+    buttons.continueLastGame();
 })
 
 //sounds
@@ -99,11 +104,11 @@ let resultsList = results.getResults();
 let scoreTable = new Score();
 table.addEventListener(('click'), (event) => {
     results.getResults();
-    scoreTable.viewScore();    
+    scoreTable.viewScore();
 })
 scoreTable.closeTableBtn.addEventListener(('click'), (event) => {
     document.body.classList.remove('hidden');
-    scoreTable.scoreWrapper.classList.remove('open'); 
+    scoreTable.scoreWrapper.classList.remove('open');
     console.log('hi')
 });
 

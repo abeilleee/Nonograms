@@ -1,9 +1,10 @@
 import { createElement } from "./createElementFunction";
 import { wrapper } from "./createElements";
 import { timer } from "./app";
-import { levels } from "./app";
 import { nonograms } from "./nonograms";
 import { gameField } from "./app";
+import { results } from "./app";
+import { levels } from "./app";
 
 
 export class Buttons {
@@ -12,13 +13,14 @@ export class Buttons {
         this.resetBtn = createElement({ tag: 'button', text: 'Reset', parent: this.buttonsBox, classes: ['btn'] });
         this.saveGameBtn = createElement({
             tag: 'button', text: 'Save game', parent: this.buttonsBox,
-            classes: ['btn', 'disabledBtn']});
+            classes: ['btn', 'disabledBtn']
+        });
         this.continueBtn = createElement({ tag: 'button', text: 'Continue last game', parent: this.buttonsBox, classes: ['btn'] });
         this.solutionBtn = createElement({ tag: 'button', text: 'Solution', parent: this.buttonsBox, classes: ['btn'] });
     }
 
     reset() {
-        timer.stop();   
+        timer.stop();
         timer.initTimer();
         let clickedCells = document.querySelectorAll('.cell--clicked');
         let crossedCells = document.querySelectorAll('.cell--crossed');
@@ -52,14 +54,45 @@ export class Buttons {
         }
     }
 
-    removeDisabled() {
-        this.resetBtn.classList.remove('disabledBtn');
-        // this.saveGameBtn.classList.remove('disabledBtn');
-        this.continueBtn.classList.remove('disabledBtn');
-        this.solutionBtn.classList.remove('disabledBtn');
+    continueLastGame() {
+        gameField.cleanField();
+
+        const lastGameOptions = JSON.parse(localStorage.getItem('Saved Game'));       
+        let currentGameId = lastGameOptions[0].id;
+        let clickedCells = lastGameOptions[0].filledCells;
+        let crossedCells = lastGameOptions[0].crossedCells;
+        let time = lastGameOptions[0].time;        
+        let minutes = time.slice(0,2);
+        let seconds = time.slice(3,5);
+        console.log(minutes)
+        console.log(seconds)
+
+        levels.selectLevel(currentGameId);
+        timer.setTime(minutes, seconds)
+        
+        this.continueBtn.classList.add('disabledBtn');
+        for (let i = 0; i < clickedCells.length; i++) {
+            let id = clickedCells[i];
+            document.getElementById(id).classList.add('cell--clicked');
+        }
+        for (let i = 0; i < crossedCells.length; i++) {
+            let id = crossedCells[i];
+            document.getElementById(id).classList.add('cell--crossed');
+        }
+
+        
+
+
     }
 
 
-
+    removeDisabled() {
+        this.resetBtn.classList.remove('disabledBtn');
+        this.continueBtn.classList.remove('disabledBtn');
+        this.solutionBtn.classList.remove('disabledBtn');
+    }
 }
+
+
+
 

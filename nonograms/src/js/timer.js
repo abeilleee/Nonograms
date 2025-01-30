@@ -41,6 +41,12 @@ export class Timer {
         buttons.saveGameBtn.classList.add('disabledBtn');
     }
 
+    setTime(minutes, seconds) {
+        this.minutes = minutes;
+        this.seconds = seconds;
+        this.timer.textContent = `${String(this.minutes).padStart(2, '0')}:${String(this.seconds).padStart(2, '0')}`;
+    }
+
     getCurrentTime() {
         return this.currentTime;
     }

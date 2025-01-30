@@ -1,6 +1,4 @@
-import { nonograms } from "./nonograms";
 import { checkArrays } from "./functions";
-import { ModalWindow } from "./modalWindow";
 import { modal } from "./app";
 import { results } from "./app";
 
@@ -25,11 +23,5 @@ export let checkSolution = (puzzle) => {
             results.saveResult();
         }
     }
-    // console.log('cellsFilled: ' + cellsFilled.length);
-    // console.log('filledCellsAmount: ' + filledCellsAmount);
-
-    // console.log('solution: ' + solution);
-    // console.log('userSolution: ' + userSolution);d
-    // console.log('RESULT: ' + result);
 }
 
