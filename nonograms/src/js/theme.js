@@ -16,6 +16,8 @@ const themes = {
         '--body-bg-lines-color': '#d6d6d6',
         '--btn-bg-color': '#ffffff',
         '--btn-text-color': '#41403e',
+        '--font-color-modal': '#41403e',
+        '--bg-color-modal': '#ffffff',
     },
     dark: {
         '--wrapper-bg-color': '#1d1d1d',
@@ -26,6 +28,8 @@ const themes = {
         '--body-bg-lines-color': '#393939',
         '--btn-bg-color': '#717171',
         '--btn-text-color': '#41403e',
+        '--font-color-modal': '#d4d3d3',
+        '--bg-color-modal': '#282828',
     }
 }
 

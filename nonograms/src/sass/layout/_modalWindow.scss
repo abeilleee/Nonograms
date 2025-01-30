@@ -34,7 +34,7 @@
         display: none;
         width: 100%;
         height: 100%;
-        background-color: rgba(0, 0, 0, 0.323);
+        background-color: rgba(0, 0, 0, 0.617);
         position: fixed;
         left: 0;
         top: 0;
@@ -49,6 +49,7 @@
 
     &__btn {
         @include flex-center;
+        color:var(--font-color-modal);
     }
 }
 
