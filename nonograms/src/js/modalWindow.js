@@ -21,10 +21,10 @@ export class ModalWindow {
             sounds.playWin();
             let currentTimeSeconds = timer.getCurrentTimeSeconds();
             this.modalContent.textContent = `Great! You have solved the nonogram in ${currentTimeSeconds} seconds!`    
-            buttons.saveGameBtn.classList.add('disabledBtn');
-            buttons.continueBtn.classList.add('disabledBtn');
+            
             buttons.solutionBtn.classList.add('disabledBtn');
             document.querySelector('.field').classList.add('disabled');
+            buttons.saveGameBtn.classList.add('disabledBtn'); 
     }
 
     closeModal() {
