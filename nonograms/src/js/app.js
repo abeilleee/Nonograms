@@ -41,6 +41,10 @@ buttons.solutionBtn.addEventListener(('click'), (event) => {
     timer.initTimer();
 });
 
+buttons.saveGameBtn.addEventListener(('click'), (event) => {
+    results.saveResult();
+})
+
 //sounds
 export const sounds = new Sounds();
 export let soundDisabled = JSON.parse(localStorage.getItem('soundDisabled'));

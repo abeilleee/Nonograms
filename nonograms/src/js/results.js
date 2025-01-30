@@ -2,10 +2,19 @@ import { gameField } from "./app";
 import { getLevelName } from "./functions";
 import { timer } from "./app";
 import { nonograms } from "./nonograms";
+import { createElement } from "./createElementFunction";
 
 export class Result {
     constructor() {
         this.resultsArr;
+        this.saveGameMessageWrapper = createElement({
+            tag: 'div', parent: document.body,
+            classes: ['save-message__wrapper']
+        });
+        this.saveGameMessageContent = createElement({
+            tag: 'div', text: 'Game is saved',
+            parent: this.saveGameMessageWrapper, classes: ['save-message']
+        });
     }
 
     saveResult() {
@@ -24,6 +33,12 @@ export class Result {
             this.resultsArr.shift();
         }
         localStorage.setItem('Results', JSON.stringify(this.resultsArr));
+
+        this.saveGameMessageWrapper.classList.add('open');
+        setTimeout(() => {
+            this.saveGameMessageWrapper.classList.remove('open');
+        }, 500)
+
     }
 
     getResults() {
