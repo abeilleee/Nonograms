@@ -106,6 +106,7 @@ export class GameField {
                     checkSolution(puzzle);
                     cell.classList.contains('cell--clicked') ? sounds.playClick() : sounds.playErase();
                     buttons.saveGameBtn.classList.remove('disabledBtn');
+                    buttons.continueBtn.classList.remove('disabledBtn');
                 });
 
                 cell.addEventListener(('contextmenu'), (event) => {
@@ -120,6 +121,7 @@ export class GameField {
                     }
                     cell.classList.contains('cell--crossed') ? sounds.playCross() : sounds.playErase();
                     buttons.saveGameBtn.classList.remove('disabledBtn');
+                    buttons.continueBtn.classList.remove('disabledBtn');
                 });
 
             }
