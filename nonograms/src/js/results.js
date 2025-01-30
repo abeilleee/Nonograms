@@ -33,12 +33,6 @@ export class Result {
             this.resultsArr.shift();
         }
         localStorage.setItem('Results', JSON.stringify(this.resultsArr));
-
-        this.saveGameMessageWrapper.classList.add('open');
-        setTimeout(() => {
-            this.saveGameMessageWrapper.classList.remove('open');
-        }, 500)
-
     }
 
     getResults() {
@@ -70,6 +64,10 @@ export class Result {
         savedGame.push(savedGameOptions);
         localStorage.setItem('Saved Game', JSON.stringify(savedGame));
         savedGame = [];
+        this.saveGameMessageWrapper.classList.add('open');
+        setTimeout(() => {
+            this.saveGameMessageWrapper.classList.remove('open');
+        }, 500)
     }
 }
 
