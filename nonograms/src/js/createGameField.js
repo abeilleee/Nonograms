@@ -105,7 +105,6 @@ export class GameField {
                     }
                     checkSolution(puzzle);
                     cell.classList.contains('cell--clicked') ? sounds.playClick() : sounds.playErase();
-                    // buttons.saveGameBtn.classList.remove('disabledBtn');
                     buttons.continueBtn.classList.remove('disabledBtn');
                 });
 

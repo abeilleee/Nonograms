@@ -39,6 +39,7 @@ buttons.solutionBtn.addEventListener(('click'), (event) => {
     buttons.showSolution(target);
     timer.stop();
     timer.initTimer();
+    buttons.continueBtn.classList.remove('disabledBtn');
 });
 
 buttons.saveGameBtn.addEventListener(('click'), (event) => {
