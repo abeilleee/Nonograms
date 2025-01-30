@@ -3,7 +3,6 @@ import { wrapper } from "./createElements";
 import { timer } from "./app";
 import { nonograms } from "./nonograms";
 import { gameField } from "./app";
-import { results } from "./app";
 import { levels } from "./app";
 
 
@@ -61,6 +60,7 @@ export class Buttons {
         let currentGameId = lastGameOptions[0].id;
         let clickedCells = lastGameOptions[0].filledCells;
         let crossedCells = lastGameOptions[0].crossedCells;
+        let level = lastGameOptions[0].level.toLowerCase();
         let time = lastGameOptions[0].time;        
         let minutes = time.slice(0,2);
         let seconds = time.slice(3,5);
@@ -78,13 +78,9 @@ export class Buttons {
         for (let i = 0; i < crossedCells.length; i++) {
             let id = crossedCells[i];
             document.getElementById(id).classList.add('cell--crossed');
-        }
-
-        
-
-
+        }      
+        document.querySelector('.templates__select').value = `${currentGameId}`;
     }
-
 
     removeDisabled() {
         this.resetBtn.classList.remove('disabledBtn');
