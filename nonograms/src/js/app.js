@@ -43,20 +43,20 @@ buttons.solutionBtn.addEventListener(('click'), (event) => {
 
 //sounds
 export const sounds = new Sounds();
-export let soundSwitch = JSON.parse(localStorage.getItem('soundSwitch'));
-if (!localStorage.getItem('soundSwitch')) {
-    localStorage.setItem('soundSwitch', false);
+export let soundDisabled = JSON.parse(localStorage.getItem('soundDisabled'));
+if (!localStorage.getItem('soundDisabled')) {
+    localStorage.setItem('soundDisabled', false);
 }
+console.log(soundDisabled)
+changeColorSoundSwitcher();
 
 soundBtn.addEventListener(('click'), (event) => {
-    soundSwitch = !soundSwitch;
-    localStorage.setItem('soundSwitch', soundSwitch);
+    soundDisabled = !soundDisabled;
+    localStorage.setItem('soundDisabled', soundDisabled);
     const soundColorOn = isDarkTheme ? 'url(assets/images/soundOnLight.svg)' : 'url(assets/images/soundOnDark.svg)';
     const soundColorOff = isDarkTheme ? 'url(assets/images/soundOffLight.svg)' : 'url(assets/images/soundOffDark.svg)';
-    soundSwitch ? soundBtn.style.background = soundColorOn
-        : soundBtn.style.background = soundColorOff;
-    console.log('sound switch: ' + !soundSwitch);
-    console.log('isDarkTheme: ' + isDarkTheme);
+    soundDisabled ? soundBtn.style.background = soundColorOff
+        : soundBtn.style.background = soundColorOn;
 });
 
 //choose template
@@ -83,14 +83,12 @@ modal.modalCloseBtn.addEventListener(('click'), (event) => {
     modal.closeModal();
 });
 
-changeColorSoundSwitcher();
 
 
 //results
 export let results = new Result();
 
 let resultsList = results.getResults();
-console.log(resultsList);
 
 //score btn
 let scoreTable = new Score();

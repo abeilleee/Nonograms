@@ -1,5 +1,5 @@
 import { clickSound, eraseSound, crossSound } from "./soundFunctions";
-import { soundSwitch } from "./app";
+import { soundDisabled } from "./app";
 
 export class Sounds {
 
@@ -12,25 +12,25 @@ export class Sounds {
     }
 
     playClick() {
-        if (soundSwitch) {
+        if (!soundDisabled) {
             clickSound(this.clickSound);
         }
     }
 
     playErase() {
-        if (soundSwitch) {
+        if (!soundDisabled) {
             eraseSound(this.eraseSound);
         }
     }
 
     playCross() {
-        if (soundSwitch) {
+        if (!soundDisabled) {
             crossSound(this.crossSound);
         }
     }
 
     playWin() {
-        if (soundSwitch) {
+        if (!soundDisabled) {
             this.winSound.play();
         }
     }
