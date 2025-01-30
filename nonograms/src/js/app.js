@@ -43,6 +43,7 @@ buttons.solutionBtn.addEventListener(('click'), (event) => {
 
 buttons.saveGameBtn.addEventListener(('click'), (event) => {
     results.saveResult();
+    buttons.saveGameBtn.classList.add('disabledBtn');
 })
 
 //sounds
