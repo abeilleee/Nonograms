@@ -18,7 +18,6 @@ export class Timer {
     }
 
     start() {      
-        buttons.saveGameBtn.classList.remove('disabledBtn');
         this.timerOn = true;
         this.interval = setInterval(() => {
             this.seconds++;     

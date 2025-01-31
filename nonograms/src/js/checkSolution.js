@@ -1,6 +1,7 @@
 import { checkArrays } from "./functions";
 import { modal } from "./app";
 import { results } from "./app";
+import { buttons } from "./app";
 
 export let checkSolution = (puzzle) => {
     const cells = document.querySelectorAll('.cell'); //все ячейки на поле
@@ -18,9 +19,10 @@ export let checkSolution = (puzzle) => {
     if (cellsFilled.length === filledCellsAmount) {
         result = checkArrays(solution, userSolution);
         if (result === true) {
+            buttons.saveGameBtn.classList.add('disabledBtn'); 
             modal.viewModal();
             results.saveResult();
-            buttons.saveGameBtn.classList.add('disabledBtn'); 
+            
         }
     }
 }
