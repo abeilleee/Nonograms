@@ -24,7 +24,6 @@ export class ModalWindow {
             
             buttons.solutionBtn.classList.add('disabledBtn');
             document.querySelector('.field').classList.add('disabled');
-            buttons.saveGameBtn.classList.add('disabledBtn'); 
     }
 
     closeModal() {

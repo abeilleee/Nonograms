@@ -20,6 +20,7 @@ export let checkSolution = (puzzle) => {
         if (result === true) {
             modal.viewModal();
             results.saveResult();
+            buttons.saveGameBtn.classList.add('disabledBtn'); 
         }
     }
 }
