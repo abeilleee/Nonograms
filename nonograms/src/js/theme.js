@@ -55,7 +55,6 @@ const themeHadler = (event) => {
     isDarkTheme = !isDarkTheme;
     localStorage.setItem('isDarkTheme', isDarkTheme);
 
-    console.log(isDarkTheme);
     changeTheme(isDarkTheme);
     changeColorSoundSwitcher();
 }

@@ -33,7 +33,6 @@ export class Buttons {
 
     showSolution(target) {
         let currentGameId = gameField.currentGameId;
-        console.log('currenGameID solution: ' + currentGameId);
         gameField.cleanField();
         if ((target) === this.solutionBtn) {
             this.solutionBtn.classList.add('selected');

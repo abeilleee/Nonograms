@@ -48,7 +48,6 @@ buttons.saveGameBtn.addEventListener(('click'), (event) => {
 });
 
 buttons.continueBtn.addEventListener(('click'), (event) => {
-    console.log('hi')
     buttons.continueLastGame();
 })
 
@@ -58,7 +57,6 @@ export let soundDisabled = JSON.parse(localStorage.getItem('soundDisabled'));
 if (!localStorage.getItem('soundDisabled')) {
     localStorage.setItem('soundDisabled', false);
 }
-console.log(soundDisabled)
 changeColorSoundSwitcher();
 
 soundBtn.addEventListener(('click'), (event) => {
@@ -110,5 +108,4 @@ table.addEventListener(('click'), (event) => {
 scoreTable.closeTableBtn.addEventListener(('click'), (event) => {
     document.body.classList.remove('hidden');
     scoreTable.scoreWrapper.classList.remove('open');
-    console.log('hi')
 });

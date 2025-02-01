@@ -11,8 +11,7 @@ export class RandomGame {
     }
 
     getRandomGame() {
-        let randomIdx = getRandomNumber(nonograms);
-        console.log('random idx of game: '+ randomIdx);        
+        let randomIdx = getRandomNumber(nonograms);      
         levels.selectLevel(randomIdx);
         document.querySelector('.templates__select').value = `${randomIdx}`;
         gameField.createTopClues(nonograms[randomIdx]);
