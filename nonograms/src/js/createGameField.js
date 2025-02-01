@@ -98,7 +98,7 @@ export class GameField {
                         cell.classList.toggle('cell--clicked');
                         cell.classList.remove('cell--crossed');
                         if (timer.timerOn === false) {
-                            timer.start();
+                            timer.start();                            
                         }
                         buttons.saveGameBtn.classList.remove('disabledBtn');
                         if (hasSavedGame === true) {

@@ -23,6 +23,7 @@ export class Result {
             id: `${gameField.currentGameId}`,
             template: `${nonograms[gameField.currentGameId].name}`,
             level: getLevelName(gameField.currentGameId),
+            // time: `${String(timer.minutes).padStart(2, '0')}:${String(timer.seconds).padStart(2, '0')}`,
             time: timer.getCurrentTime(),
             seconds: timer.getCurrentTimeSeconds(),
         };
@@ -55,7 +56,8 @@ export class Result {
             id: `${gameField.currentGameId}`,
             template: `${nonograms[gameField.currentGameId].name}`,
             level: getLevelName(gameField.currentGameId),
-            time: timer.getCurrentTime(),
+            time: `${String(timer.minutes).padStart(2, '0')}:${String(timer.seconds).padStart(2, '0')}`,
+            // time: timer.getCurrentTime(),
             filledCells: clickedCellsIndexes,
             crossedCells: crossedCellsIndexes,
         };

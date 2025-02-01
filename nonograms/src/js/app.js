@@ -29,7 +29,6 @@ export let results = new Result();
 let resultsList = results.getResults();
 export let hasSavedGame = results.hasSavedGame;
 
-console.log('hasSavedGame: ' + hasSavedGame)
 //buttons
 export const buttons = new Buttons();
 buttons.resetBtn.addEventListener(('click'), (event) => {
@@ -56,7 +55,6 @@ buttons.solutionBtn.addEventListener(('click'), (event) => {
 buttons.saveGameBtn.addEventListener(('click'), (event) => {
     results.saveGame();
     buttons.saveGameBtn.classList.add('disabledBtn');
-    console.log('hasSavedGame: ' + hasSavedGame);
     hasSavedGame = true;
     buttons.continueBtn.classList.add('disabledBtn');
 });

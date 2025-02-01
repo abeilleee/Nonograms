@@ -8,13 +8,15 @@ export class Timer {
         this.minutes = 0;
         this.seconds = 0;
         this.interval;
-        this.currentTime;
-        this.currentTimeSeconds;
+        this.currentTime = '00:00';
+        this.currentTimeSeconds = 0;
         this.timerOn = false;
     }
 
     initTimer() {
         this.timer.textContent = `${String(this.minutes).padStart(2, '0')}:${String(this.seconds).padStart(2, '0')}`;
+        this.currentTimeSeconds = 0;
+        this.currentTime = '00:00';
     }
 
     start() {      
