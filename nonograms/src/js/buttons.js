@@ -4,6 +4,7 @@ import { timer } from "./app";
 import { nonograms } from "./nonograms";
 import { gameField } from "./app";
 import { levels } from "./app";
+import { hasSavedGame } from "./app";
 
 
 export class Buttons {
@@ -14,7 +15,10 @@ export class Buttons {
             tag: 'button', text: 'Save game', parent: this.buttonsBox,
             classes: ['btn', 'disabledBtn']
         });
-        this.continueBtn = createElement({ tag: 'button', text: 'Continue last game', parent: this.buttonsBox, classes: ['btn'] });
+        this.continueBtn = createElement({
+            tag: 'button', text: 'Continue last game', parent: this.buttonsBox,
+            classes: ['btn', 'disabledBtn']
+        });
         this.solutionBtn = createElement({ tag: 'button', text: 'Solution', parent: this.buttonsBox, classes: ['btn'] });
     }
 
@@ -54,14 +58,14 @@ export class Buttons {
 
     continueLastGame() {
         gameField.cleanField();
-        const lastGameOptions = JSON.parse(localStorage.getItem('Saved Game'));       
+        const lastGameOptions = JSON.parse(localStorage.getItem('Saved Game'));
         let currentGameId = lastGameOptions[0].id;
         let clickedCells = lastGameOptions[0].filledCells;
         let crossedCells = lastGameOptions[0].crossedCells;
         let level = lastGameOptions[0].level.toLowerCase();
-        let time = lastGameOptions[0].time;        
-        let minutes = time.slice(0,2);
-        let seconds = time.slice(3,5);
+        let time = lastGameOptions[0].time;
+        let minutes = time.slice(0, 2);
+        let seconds = time.slice(3, 5);
         levels.selectLevel(currentGameId);
         timer.setTime(minutes, seconds);
 
@@ -69,7 +73,7 @@ export class Buttons {
         gameField.createLeftClues(nonograms[currentGameId]);
         gameField.createFieldGame(nonograms[currentGameId]);
         gameField.fillClues(nonograms[currentGameId]);
-        
+
         this.continueBtn.classList.add('disabledBtn');
         for (let i = 0; i < clickedCells.length; i++) {
             let id = clickedCells[i];
@@ -78,13 +82,15 @@ export class Buttons {
         for (let i = 0; i < crossedCells.length; i++) {
             let id = crossedCells[i];
             document.getElementById(id).classList.add('cell--crossed');
-        }      
+        }
         document.querySelector('.templates__select').value = `${currentGameId}`;
     }
 
     removeDisabled() {
         this.resetBtn.classList.remove('disabledBtn');
-        this.continueBtn.classList.remove('disabledBtn');
+        if (hasSavedGame === true) {
+            this.continueBtn.classList.remove('disabledBtn');
+        }
         this.solutionBtn.classList.remove('disabledBtn');
     }
 }

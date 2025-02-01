@@ -15,6 +15,7 @@ export class Result {
             tag: 'div', text: 'Game is saved',
             parent: this.saveGameMessageWrapper, classes: ['save-message']
         });
+        this.hasSavedGame =  JSON.parse(localStorage.getItem('Saved Game')) ? true : false;
     }
 
     saveResult() {
@@ -67,6 +68,6 @@ export class Result {
         this.saveGameMessageWrapper.classList.add('open');
         setTimeout(() => {
             this.saveGameMessageWrapper.classList.remove('open');
-        }, 500)
+        }, 500);
     }
 }

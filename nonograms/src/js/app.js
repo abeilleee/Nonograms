@@ -23,6 +23,13 @@ levels.levelsBox.addEventListener(('click'), (event) => {
     levels.selectLevel(target);
 });
 
+//results
+export let results = new Result();
+
+let resultsList = results.getResults();
+export let hasSavedGame = results.hasSavedGame;
+
+console.log('hasSavedGame: ' + hasSavedGame)
 //buttons
 export const buttons = new Buttons();
 buttons.resetBtn.addEventListener(('click'), (event) => {
@@ -30,7 +37,9 @@ buttons.resetBtn.addEventListener(('click'), (event) => {
     buttons.saveGameBtn.classList.add('disabledBtn');
     buttons.solutionBtn.classList.remove('selected');
     buttons.solutionBtn.classList.remove('disabledBtn');
-    buttons.continueBtn.classList.remove('disabledBtn');
+    if (hasSavedGame === true) {
+        buttons.continueBtn.classList.remove('disabledBtn');
+    }
     gameField.field.classList.remove('disabled');
 });
 
@@ -39,12 +48,17 @@ buttons.solutionBtn.addEventListener(('click'), (event) => {
     buttons.showSolution(target);
     timer.stop();
     timer.initTimer();
-    buttons.continueBtn.classList.remove('disabledBtn');
+    if (hasSavedGame === true) {
+        buttons.continueBtn.classList.remove('disabledBtn');
+    }
 });
 
 buttons.saveGameBtn.addEventListener(('click'), (event) => {
     results.saveGame();
     buttons.saveGameBtn.classList.add('disabledBtn');
+    console.log('hasSavedGame: ' + hasSavedGame);
+    hasSavedGame = true;
+    buttons.continueBtn.classList.add('disabledBtn');
 });
 
 buttons.continueBtn.addEventListener(('click'), (event) => {
@@ -94,10 +108,7 @@ modal.modalCloseBtn.addEventListener(('click'), (event) => {
 
 
 
-//results
-export let results = new Result();
 
-let resultsList = results.getResults();
 
 //score btn
 let scoreTable = new Score();

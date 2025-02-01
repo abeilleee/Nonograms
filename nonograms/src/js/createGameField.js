@@ -5,6 +5,7 @@ import { removeChildren } from "./functions";
 import { checkSolution } from "./checkSolution";
 import { buttons } from "./app";
 import { sounds } from "./app";
+import { hasSavedGame } from "./app";
 
 export class GameField {
 
@@ -100,12 +101,15 @@ export class GameField {
                             timer.start();
                         }
                         buttons.saveGameBtn.classList.remove('disabledBtn');
-                        buttons.continueBtn.classList.remove('disabledBtn');
+                        if (hasSavedGame === true) {
+                            buttons.continueBtn.classList.remove('disabledBtn');
+                        }
+
                     }
                     checkSolution(puzzle);
                     cell.classList.contains('cell--clicked') ? sounds.playClick() : sounds.playErase();
-                    
-                    
+
+
                 });
 
                 cell.addEventListener(('contextmenu'), (event) => {
@@ -118,11 +122,13 @@ export class GameField {
                             timer.start();
                         }
                         buttons.saveGameBtn.classList.remove('disabledBtn');
-                        buttons.continueBtn.classList.remove('disabledBtn');
+                        if (hasSavedGame === true) {
+                            buttons.continueBtn.classList.remove('disabledBtn');
+                        }
                     }
                     cell.classList.contains('cell--crossed') ? sounds.playCross() : sounds.playErase();
-                    
-                   
+
+
                 });
 
             }
