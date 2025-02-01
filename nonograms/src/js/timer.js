@@ -43,6 +43,8 @@ export class Timer {
         this.minutes = minutes;
         this.seconds = seconds;
         this.timer.textContent = `${String(this.minutes).padStart(2, '0')}:${String(this.seconds).padStart(2, '0')}`;
+        this.currentTime = this.timer.textContent;
+        this.currentTimeSeconds = +`${this.minutes*60 +this.seconds }`;
     }
 
     getCurrentTime() {

@@ -98,6 +98,7 @@ export class GameField {
                         cell.classList.remove('cell--crossed');
                         if (timer.timerOn === false) {
                             timer.start();
+                            console.log(timer.seconds)
                         }
                         buttons.saveGameBtn.classList.remove('disabledBtn');
                         buttons.continueBtn.classList.remove('disabledBtn');
