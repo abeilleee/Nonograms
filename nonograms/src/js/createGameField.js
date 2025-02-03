@@ -126,6 +126,7 @@ export class GameField {
                             buttons.continueBtn.classList.remove('disabledBtn');
                         }
                     }
+                    checkSolution(puzzle);
                     cell.classList.contains('cell--crossed') ? sounds.playCross() : sounds.playErase();
 
 
