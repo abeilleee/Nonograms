@@ -65,15 +65,15 @@ buttons.continueBtn.addEventListener(('click'), (event) => {
 
 //sounds
 export const sounds = new Sounds();
-export let soundDisabled = JSON.parse(localStorage.getItem('soundDisabled'));
-if (!localStorage.getItem('soundDisabled')) {
-    localStorage.setItem('soundDisabled', false);
+export let soundDisabled = JSON.parse(localStorage.getItem('abeilleee_soundDisabled'));
+if (!localStorage.getItem('abeilleee_soundDisabled')) {
+    localStorage.setItem('abeilleee_soundDisabled', false);
 }
 changeColorSoundSwitcher();
 
 soundBtn.addEventListener(('click'), (event) => {
     soundDisabled = !soundDisabled;
-    localStorage.setItem('soundDisabled', soundDisabled);
+    localStorage.setItem('abeilleee_soundDisabled', soundDisabled);
     const soundColorOn = isDarkTheme ? 'url(assets/images/soundOnLight.svg)' : 'url(assets/images/soundOnDark.svg)';
     const soundColorOff = isDarkTheme ? 'url(assets/images/soundOffLight.svg)' : 'url(assets/images/soundOffDark.svg)';
     soundDisabled ? soundBtn.style.background = soundColorOff

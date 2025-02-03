@@ -15,7 +15,7 @@ export class Result {
             tag: 'div', text: 'Game is saved',
             parent: this.saveGameMessageWrapper, classes: ['save-message']
         });
-        this.hasSavedGame =  JSON.parse(localStorage.getItem('Saved Game')) ? true : false;
+        this.hasSavedGame =  JSON.parse(localStorage.getItem('abeilleee_savedGame')) ? true : false;
     }
 
     saveResult() {
@@ -29,17 +29,17 @@ export class Result {
         };
 
         const emptyResultsArr = [];
-        this.resultsArr = JSON.parse(localStorage.getItem('Results')) || emptyResultsArr;
+        this.resultsArr = JSON.parse(localStorage.getItem('abeilleee_results')) || emptyResultsArr;
         this.resultsArr.push(results);
         if (this.resultsArr.length > 5) {
             this.resultsArr.shift();
         }
-        localStorage.setItem('Results', JSON.stringify(this.resultsArr));
+        localStorage.setItem('abeilleee_results', JSON.stringify(this.resultsArr));
     }
 
     getResults() {
         const emptyResultsArr = [];
-        const lastResults = JSON.parse(localStorage.getItem('Results')) || emptyResultsArr;
+        const lastResults = JSON.parse(localStorage.getItem('abeilleee_results')) || emptyResultsArr;
         const sortedResults = lastResults.sort((obj1, obj2) => obj1.seconds > obj2.seconds ? 1 : -1);
         return sortedResults;
     }
@@ -61,11 +61,11 @@ export class Result {
             filledCells: clickedCellsIndexes,
             crossedCells: crossedCellsIndexes,
         };
-        localStorage.removeItem('Saved Game');
+        localStorage.removeItem('abeilleee_savedGame');
         const emptyArr = [];
-        let savedGame = JSON.parse(localStorage.getItem('Saved Game')) || emptyArr;
+        let savedGame = JSON.parse(localStorage.getItem('abeilleee_savedGame')) || emptyArr;
         savedGame.push(savedGameOptions);
-        localStorage.setItem('Saved Game', JSON.stringify(savedGame));
+        localStorage.setItem('abeilleee_savedGame', JSON.stringify(savedGame));
         savedGame = [];
         this.saveGameMessageWrapper.classList.add('open');
         setTimeout(() => {

@@ -58,7 +58,7 @@ export class Buttons {
 
     continueLastGame() {
         gameField.cleanField();
-        const lastGameOptions = JSON.parse(localStorage.getItem('Saved Game'));
+        const lastGameOptions = JSON.parse(localStorage.getItem('abeilleee_savedGame'));
         let currentGameId = lastGameOptions[0].id;
         let clickedCells = lastGameOptions[0].filledCells;
         let crossedCells = lastGameOptions[0].crossedCells;

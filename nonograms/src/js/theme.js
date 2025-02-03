@@ -32,10 +32,10 @@ const themes = {
     }
 }
 
-export let isDarkTheme = JSON.parse(localStorage.getItem('isDarkTheme'));
+export let isDarkTheme = JSON.parse(localStorage.getItem('abeilleee_isDarkTheme'));
 
-if (!localStorage.getItem('isDarkTheme')) {
-    localStorage.setItem('isDarkTheme', false);
+if (!localStorage.getItem('abeilleee_isDarkTheme')) {
+    localStorage.setItem('abeilleee_isDarkTheme', false);
 }
 
 const changeTheme = () => {
@@ -53,7 +53,7 @@ const changeTheme = () => {
 const themeHadler = (event) => {
     event.preventDefault();
     isDarkTheme = !isDarkTheme;
-    localStorage.setItem('isDarkTheme', isDarkTheme);
+    localStorage.setItem('abeilleee_isDarkTheme', isDarkTheme);
 
     changeTheme(isDarkTheme);
     changeColorSoundSwitcher();
